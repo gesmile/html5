@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="I am lucky if this description will be used somehow: 'Howto enrich a web-site with data'.">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/standard.css" >
+  <title>almost minimal HTML5</title>
+
+</head>
+
+<body>
+<header itemtype="https://schema.org/WPHeader" itemscope>
+  <!-- header starts -->
+  
+  <!-- Mobile Menu Button -->
+  <!--
+  <button id="nav-mobile-button" aria-expanded="false" aria-controls="nav-main">
+    ☰ Menu
+  </button>
+  -->
+
+  <!-- Screen Menu Button -->
+    <nav id="nav-main" aria-label="main navigation">
+      <ul>
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="example.html">Example</a></li>
+        <li><a href="default.html">Default</a></li>
+        <li><a href="https://github.com/gesmile/html5" target="_blank" rel="noopener noreferrer">github Source</a></li>
+      </ul>
+    </nav>
+
+<hgroup>
+  <h1>almost minimal HTML5</h1>
+  <p>free to use web-page to learn about accessibility and semantic techniques</p>
+</hgroup>
+<!-- header ends -->
+</header>
+
+<main id="main-content">
+<!-- main content starts -->
+
+<section id="section_1">
+  <hgroup>
+    <h2>Content Elements</h2>
+    <p>Use document semantics to structure your content and help machines find it.</p>
+  </hgroup>
+  <dl>
+    <dt>main</dt>
+      <dd>Specifies the <strong>main content</strong> of <em>this</em> document (web page).</dd>
+      <dd>The main element should not be hidden and must be directly reachable by assistive technologies.</dd>
+      <dd>The content inside the <code>main</code> element should be <em>unique</em> to the document.</dd>
+      <dd>There must not be more than <strong>one main</strong> element per document.</dd>
+      <dd>It should <strong>not contain</strong> any <em>repeated content</em> that appears across documents, such as <data value="sidebar">sidebars</data>, <data value="navigation">navigation links</data>, <data value="legal">copyright or imprint information</data>, <data value="branding">site logos</data>, or <data value="search">search forms</data>.</dd>
+      <dd>The main element must <strong>not</strong> be a <em>descendant</em> of an <data value="article">article</data>, <data value="aside">aside</data>, <data value="footer">footer</data>, <data value="header">header</data>, or <data value="nav">nav</data> element.</dd>
+      <dd>Use the <code>main</code> tag with attribute <code>id="main-content"</code> for skip-links.</dd>
+
+    <dt>section</dt>
+      <dd>A <code>section</code> is a <em>thematic grouping</em> of content, typically with at least <strong>one heading</strong>.</dd>
+      <dd>The meaningful content of a website can usually be <em>divided into sections</em> for <data value="section.introduction">introduction</data>, <data value="section.content">content</data>, <data value="section.conclusion">conclusion</data>, <data value="section.interpretation">interpretation</data>, and <data value="section.supplementary">further topic-specific information</data>.</dd>
+      <dd>If you cannot give a section a heading, it probably should not be a section.</dd>
+
+    <dt>article</dt>
+      <dd>The <code>article</code> tag specifies <em>independent, self-contained content</em>.</dd>
+      <dd>An article should make <em>sense on its own</em> and it should be possible to distribute it independently from the rest of the site.</dd>
+      <dd>Potential sources for the <code>article</code> element are <data value="content.forum-post">forum post</data>, <data value="content.blog-post">blog post</data>, <data value="content.news.story">news story</data>, <data value="content.news.press-release">press release</data>, <data value="content.release-note">release note</data>, <data value="content.academic.whitepaper">whitepaper</data>, or <data value="content.technical.documentation">additional documentation</data>.</dd>
+      <dd>An article can contain its own header, footer, sections, and even nested articles.</dd>
+
+    <dt>aside</dt>
+      <dd>The <code>aside</code> tag defines content <em>aside</em> from the <em>main content</em> it is placed in.</dd>
+      <dd>The aside content may be removed without making the main content incomprehensible.</dd>
+      <dd>The aside content should be indirectly related to the surrounding content.</dd>
+      <dd>Aside content is often placed as a sidebar in a document.</dd>
+      <dd>Typical use cases include <data value="aside.content.note">notes</data>, <data value="aside.content.definition">definitions</data>, <data value="aside.content.reference">related references</data>, <data value="aside.content.warning">warnings</data>, or <data value="aside.content.context">contextual information</data>.</dd>
+  </dl>
+</section>
+
+<section id="section_2">
+  <hgroup>
+    <h2>Site & Layout Elements</h2>
+    <p>Use landmark semantics for usability and convenience for your audience.</p>
+  </hgroup>
+  <dl>
+    <dt>header</dt>
+      <dd>Represents a <em>container</em> for <em>introductory content</em> or a <em>set of navigational links</em>, grouped in <strong>nav</strong> sections.</dd>
+      <dd>The <code>header</code> element typically contains one or more of <data value="header.heading">heading elements</data>, <data value="header.brand.logo">logo</data>, <data value="header.navigation.primary">site navigation</data>, <data value="header.brand.icon">icons</data>, <data value="header.meta.tagline">tagline</data>, <data value="header.meta.language-switch">language switch</data>, or <data value="header.meta.authorship">authorship information</data>.</dd>
+      <dd>A header does not have to be at the top of the page; it can introduce its nearest ancestor sectioning content like an article or section.</dd>
+      <dd>Do <strong>not</strong> mix up with the <a href="https://www.w3schools.com/tags/tag_head.asp" target="_blank" rel="noopener noreferrer">head element</a>, which is an invisible container for metadata between the HTML and body tags.</dd>
+      <dd>itemscope: <a href="https://schema.org/WPHeader" target="_blank" rel="noopener noreferrer">WPHeader</a> supported.</dd>
+
+    <dt>nav</dt>
+      <dd>The <code>nav</code> tag is often inside a <em>header</em> or <em>footer section</em> and more than one <code>nav</code> block is allowed.</dd>
+      <dd>Defines a <em>major block</em> of <strong>navigation links</strong> to other pages or parts within the page, e.g., <em>site navigation</em> (<code>aria-label="Primary navigation"</code>) or <em>table of contents</em> (<code>aria-label="Table of contents"</code>).</dd>
+      <dd>Not all links in a document must be inside a nav element.</dd>
+      <dd>Screen readers can <em>omit</em> this element and jump directly to the <strong>main</strong> section.</dd>
+      <dd>itemscope: <a href="https://schema.org/SiteNavigationElement" target="_blank" rel="noopener noreferrer">SiteNavigationElement</a> supported.</dd>
+
+    <dt>footer</dt>
+      <dd>A footer contains information about <em>its nearest sectioning ancestor</em> and provides additional metadata or navigational aids.</dd>
+      <dd>Common content, embedded in elements such as <strong>nav</strong> or <strong>address</strong>, includes <data value="footer.meta.authorship">authorship information</data>, <data value="footer.meta.copyright">copyright</data>, <data value="footer.meta.contact">contact information</data>, <data value="footer.navigation.sitemap">sitemap</data>, <data value="footer.navigation.back-to-top">back to top links</data>, and <data value="footer.link.related">related documents</data>.</dd>
+      <dd>The <code>footer</code> element itself has no dedicated schema.org type, but commonly contains structured data such as <data value="schema.contact"><a href="https://schema.org/ContactPoint" target="_blank" rel="noopener noreferrer">ContactPoint</a></data>, <data value="schema.navigation"><a href="https://schema.org/SiteNavigationElement" target="_blank" rel="noopener noreferrer">SiteNavigationElement</a></data>, or <data value="schema.author"><a href="https://schema.org/author" target="_blank" rel="noopener noreferrer">author</a></data> metadata.</dd>
+  </dl>
+</section>
+
+<section id="section_3">
+  <hgroup>
+    <h2>Semantic Elements</h2>
+    <p>Agent-ready, accessible microdata management</p>
+  </hgroup>
+  <h3>Standards and Organizations</h3>
+  <dl>
+    <dt>Standards</dt>
+        <dd>Use UTF-8 encoding, add valid charset and language attributes.</dd>
+        <dd>Read and follow (<a href="https://datatracker.ietf.org/" target="_blank" rel="noopener noreferrer"><abbr title="Request for Comment">RFC</abbr></a>) standards and many more like <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><abbr title="World Wide Web Consortium">W3C</abbr></a>, <a href="https://whatwg.org/" target="_blank" rel="noopener noreferrer"><abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr></a>, <a href="" ></a>
+        , <a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer"><abbr title="Web Accessibility Initiative – Accessible Rich Internet Applications">WAI-ARIA</abbr></a>.</dd>
+    <dt>Schema.org</dt>
+        <dd><a href="https://schema.org/" target="_blank" rel="noopener noreferrer" >Schema.org</a> is a collaborative, community activity with a mission to create, maintain, and promote schema for structured data.</dd>
+    <dt>RDF and OWL</dt>
+        <dd><a href="https://www.w3.org/TR/rdf-schema/" target="_blank" rel="noopener noreferrer"><abbr title="Resource Description Framework">RDF</abbr></a> is a data-modelling  vocabulary.
+        <dd><a href="https://en.wikipedia.org/wiki/Web_Ontology_Language" target="_blank" rel="noopener noreferrer"><abbr title="Web Ontology Language">OWL</abbr></a> is a family of knowledge representation languages for authoring ontologies.<dd>
+        <dd><a href="https://www.ontologyportal.org/" target="_blank" rel="noopener noreferrer"><abbr title="Suggested Upper Merged Ontology">SUMO</abbr></a> (Suggested Upper Merged Ontology) is a  free (GPLv3) formal ontology owned by the IEEE.</dd>
+    <dt><abbr title="Accessible Rich Internet Applications">ARIA</abbr></dt>
+        <dd>ARIA adds semantic meaning only when native HTML semantics are insufficient.</dd>
+        <dd>First rule of ARIA: Do not use ARIA if native HTML can express the same meaning.</dd>
+    <dt><abbr title="Friend of a Friend"><a href="https://xmlns.com/foaf/spec/" target="_blank" rel="noopener noreferrer">FOAF</a></abbr></dt>
+      <dd>Excessive <em>personally identifiable</em> machine-readable <em>data</em>, e.g.  is possible but can pose a <strong>security risk</strong>.</dd>
+      <dd>Data minimization and conscious selection are appropriate. Disclose as much as necessary and as little as possible.</dd>
+    <dt>Validation Tools</dt>
+      <dd>Use linter and validation:
+          <ul>
+            <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer"><data >W3C</data></a></li>
+            <li><a href="https://validator.schema.org/" target="_blank" rel="noopener noreferrer">validator.schema.org</a></li>
+            <li><a href="https://www.w3.org/RDF/Validator/" target="_blank" rel="noopener noreferrer">RDF validator</a></li>
+          </ul>
+      </dd>
+    </dl>
+  <h3>Microdata</h3>
+    <dl>
+      <dt>itemscope / itemtype</dt>
+        <dd>An itemscope defines the boundary of a <em>new semantic object</em>, it's scope, e.g. a <strong>div</strong> or <strong>article</strong> container or any other suitable.</dd>
+        <dd>An itemtype specifies the meaning of this container, classifies that object <em>by assigning a concrete type</em>, usually from <strong>schema.org</strong> or any other ontology.</dd>
+        <dd>Itemscope and itemtype only make sense when <em>used together</em>:<br>
+        <code>&lt;div itemscope itemtype="https://schema.org/Person"&gt;...&lt;/div&gt;</code></dd>
+        <dd>Any element with itemscope creates a <em>new</em> scope. <em>Nested</em> microdata itemscopes are allowed and indicate a <em>relation</em> to the <em>nearest ancestor</em> item.</dd>
+      <dt>itemprop / itemid</dt>
+        <dd>An <em>itemprop</em> attribute only make sense <em>within</em> an <em>itemscope</em>.</dd>
+        <dd>Then every HTML element may have an <code>itemprop</code> to <em>add</em> one or more <em>properties</em> to one or more items:<br>
+        <code>&lt;div itemprop="author" ...&gt;Author data&lt;/div&gt;</code></dd>
+        <dd>If specified, it must have at least one value or an unordered set of unique space-separated tokens: <br><code>itemprop="author editor reviewer publisher"</code></dd>
+        <dd>The <code>itemid</code> provides a <em>global identifier</em> (<strong>URL</strong>) for <em>this</em> item. Useful to link the same entity across documents.</dd>
+        <dd><code>&lt;div itemid="https://example.com/person/max" ...&gt;Max data&lt;/div&gt;</code></dd>
+        <dd>
+        <details><summary>see <code>HTML</code> microdata example:</summary>
+          <pre>
+&lt;article
+  itemscope itemtype="https://schema.org/CreativeWork"
+  itemid="https://example.com/work/almost-minimal-html5"&gt;
+  &lt;h1 itemprop="name"&gt;almost minimal HTML5&lt;/h1&gt;
+    &lt;p&gt;&lt;time itemprop="dateCreated datePublished" datetime="2026-01"&gt;Created and published in January 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;div
+    itemscope itemtype="https://schema.org/Person"
+    itemprop="author editor reviewer publisher"
+    itemid="https://example.com/person/max-mustermann"&gt;
+    &lt;span itemprop="name"&gt;Max Mustermann&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+          </pre>
+        </details>
+      <dt>Structured Data Formats</dt>
+        <dd><abbr title="JavaScript Object Notation for Linked Data">JSON-LD</abbr>, Microdata, and <abbr title="Resource Description Framework">RDF</abbr> are supported ways to embed structured data into HTML documents.</dd>
+        <dd>JSON-LD does not allow assigning multiple roles to a single property value, so each role (author, editor, reviewer, publisher) is modeled as a separate property, even when referring to the same entity.</dd>
+        <dd>JSON-LD is preferred by search engines to describe structured data without modifying visible HTML, e.g.: <details><summary>see <code>application/ld+json</code> example:</summary>
+          <pre>
+&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@id": "https://example.com/work/almost-minimal-html5",
+  "@type": "CreativeWork",
+  "name": "almost minimal HTML5",
+  "dateCreated": "2026-01",
+  "datePublished": "2026-01",
+
+  "author": {
+    "@type": "Person",
+    "@id": "https://example.com/person/max-mustermann",
+    "name": "Max Mustermann"
+  },
+
+  "editor": {
+    "@type": "Person",
+    "@id": "https://example.com/person/max-mustermann",
+    "name": "Max Mustermann"
+  },
+
+  "reviewer": {
+    "@type": "Person",
+    "@id": "https://example.com/person/max-mustermann",
+    "name": "Max Mustermann"
+  },
+
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://example.com/person/max-mustermann",
+    "name": "Max Mustermann"
+  }
+}
+&lt;/script&gt;
+          </pre>
+        </details>
+        </dd>
+    </dl>
+  </section>
+
+  <section id="section_4">
+    <hgroup>
+      <h2>HTML Elements with Semantic Flavour</h2>
+      <p>If an element can convey meaning rather than merely change appearance, use it.</p>
+    </hgroup>
+
+    <h3>Content Structure</h3>
+    <dl>
+      <dt>headlines</dt>
+        <dd>Best practice: only one visible <code>h1</code> headline per page.</dd>
+        <dd>Do not skip heading levels — start with <code>h1</code>, max to <code>h6</code>.</dd>
+        <dd>Headings are important for <em>text structure</em> and are used to generate automatic <em>tables of contents</em>.</dd>
+        <dd>Headings are used by screen readers for <em>navigation</em> and by search engines to assess <em>content importance</em>.</dd>
+      <dt>p</dt>
+        <dd>Every paragraph is considered a self-contained unit. It indicates that this is a <em>separate section</em> of thought.</dd>
+        <dd><strong>Remember</strong>: Within a paragraph there are <strong>no</strong> <em>block elements</em> allowed, like <data value="html.tag.block.div">div</data>, <data value="html.tag.block.section">section</data>, <data value="html.tag.block.article">article</data>, <data value="html.tag.block.nav">nav</data>, <data value="html.tag.block.footer">footer</data>, <data value="html.tag.block.ol">ol</data>, <data value="html.tag.block.li">li</data>, <data value="html.tag.block.ul">ul</data>, <data value="html.tag.block.table">table</data>, <data value="html.tag.block.form">form</data>, <data value="html.tag.block.fieldset">fieldset</data>, <data value="html.tag.block.button">button</data>, <data value="html.tag.block.label">label</data>, <data value="html.tag.block.iframe">iframe</data>, and further <data value="html.tag.block.p">p</data> elements. (This list is not complete).</dd></dd>
+        <dd>Only <em>phrasing content</em> elements are allowed within <code>p</code> blocks, like<br>
+        <ul>
+          <li>Text and Emphasis: <data value="html.tag.inline.span">span</data>, <data value="html.tag.inline.em">em</data>, <data value="html.tag.inline.strong">strong</data>, <data value="html.tag.inline.b">b</data>, <data value="html.tag.inline.i">i</data>, <data value="html.tag.inline.mark">mark</data>, <data value="html.tag.inline.small">small</data>, <data value="html.tag.inline.sub">sub</data>, <data value="html.tag.inline.sup">sup</data> </li>
+          <li>Links & Metadata: <data value="html.tag.inline.a">a</data>, <data value="html.tag.inline.abbr">abbr</data>, <data value="html.tag.inline.cite">cite</data>, <data value="html.tag.inline.dfn">dfn</data>, <data value="html.tag.inline.time">time</data>, <data value="html.tag.inline.data">data</data> </li>
+          <li>Code & technical distinction: <data value="html.tag.inline.code">code</data>, <data value="html.tag.inline.kbd">kbd</data>, <data value="html.tag.inline.samp">samp</data>, <data value="html.tag.inline.var">var</data> </li>
+          <li>Structure within a line: <data value="html.tag.inline.br">br</data>, <data value="html.tag.inline.wbr">wbr</data>, <data value="html.tag.inline.bdi">bdi</data>, <data value="html.tag.inline.bdo">bdo</data></li>
+          <li>Inline media: <data value="html.tag.inline.img">img</data>, <data value="html.tag.inline.svg">svg</data>, <data value="html.tag.inline.canvas">canvas</data>, <data value="html.tag.inline.picture">picture</data></li>
+          <li>Quotes, measurements, and special cases: <data value="html.tag.inline.q">q</data>, <data value="html.tag.inline.ruby">ruby</data>, <data value="html.tag.inline.rt">rt</data>, <data value="html.tag.inline.rp">rp</data>, <data value="html.tag.inline.meter">meter</data>, <data value="html.tag.inline.progress">progress</data>, <data value="html.tag.inline.output">output</data>, <data value="html.tag.inline.template">template</data> </li>
+        </ul></dd>
+      <dt>dl, dt, dd</dt>
+        <dd>A description list (<code>dl</code>), with a term/name (<code>dt</code>) and the descriptions (<code>dd</code>).</dd>
+        <dd>After a <code>dd</code>, paragraphs, line breaks, images, links, lists, etc. are allowed.</dd>
+      <dt>ol, ul, li</dt>
+        <dd><code>ol</code>: ordered and <code>ul</code>: unordered list items (<code>li</code>) are very semantic, too.</dd>
+      <dt>dfn</dt>
+        <dd>The <code>dfn</code> tag stands for the "definition element" and specifies a term that is being defined.</dd>
+        <dd>The nearest parent of the <code>dfn</code> tag should also contain the definition/explanation.</dd>
+        <dd>Examples of content inside <code>dfn</code>:
+          <ul>
+            <li>Just as the content of the <code>dfn</code> element: <dfn>HTML</dfn> is the standard markup language for creating web pages.</li>
+            <li>With the <code>title</code> attribute: <dfn title="HyperText Markup Language">HTML</dfn>.</li>
+            <li>With an <code>abbr</code> inside <code>dfn</code>: <dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn>.</li>
+            <li>With an <code>id</code> attribute added for linking: <dfn id="html-def">HTML</dfn>.</li>
+          </ul>
+        </dd>
+    </dl>
+  
+    <h3>Special HTML Elements</h3>
+    <dl>
+      <dt>meta</dt>
+        <dd>Meta data within the <code>head</code> element transports a lot of semantic information.</dd>
+      <dt>address</dt>
+        <dd>Contact information for the nearest article or the whole document.</dd>
+        <dd>Typically used for <data value="address.contact.author">author</data> or <data value="address.contact.organization">organization</data> contact details, not for general postal addresses.</dd>
+      <dt>form</dt>
+        <dd>HTML5 semantic role="search" can be applied.</dd>
+        <dd>Better: <code>&lt;nav aria-label="Search"&gt;&lt;form&gt;&lt;/form&gt;&lt;/nav&gt;</code></dd>
+        <dd>Use <strong>label</strong> for accessibility.</dd>
+        <dd>Interaction with the audience via <a href="https://developer.mozilla.org/en/docs/Learn_web_development/Extensions/Forms" target="_blank" rel="noopener noreferrer">forms</a>.</dd>
+      <dt>figure & figcaption</dt>
+        <dd>The <strong>figure</strong> element represents self-contained content, often referenced from the main text. <strong>figcaption</strong> provides a caption or legend for that content.</dd>
+        <dd><figure><img src="images/logo.png" alt="Sunset in Ρόδος" /><figcaption><a href="images/Sunset-Rhodos.jpg">Sunset in Ρόδος</a></figcaption></figure></dd>
+        <dd>Typical usage: <data value="figure.image">images</data>, <data value="figure.chart">charts</data>, <data value="figure.diagram">diagrams</data>, <data value="figure.code-snippet">code snippets</data>, <data value="figure.table">tables</data>.</dd>
+        <dd>Screen readers announce <strong>figure</strong> and read the <strong>figcaption</strong> as a description.</dd>
+        <dd>itemscope: <a href="https://schema.org/CreativeWork" target="_blank" rel="noopener noreferrer">CreativeWork</a> or subtype like <a href="https://schema.org/ImageObject" target="_blank" rel="noopener noreferrer">ImageObject</a>.</dd>
+      <dt>details & summary</dt>
+        <dd>These <em>two elements</em> represents a disclosure widget that woks without javascript: <details><summary>You can't pull the wool</summary>over my eyes.</details></dd>
+        <dd>The <code>summary</code> element provides the heading or label for the <code>details</code> content. It needs to be the very next element after details to work, like <code>&lt;details&gt;&lt;summary&gt;wool&lt;/summary&gt;eyes&lt;/details&gt;</code>.</dd>
+        <dd>Typical usage: <data value="details.faq">FAQ items</data>, <data value="details.technical-info">technical information blocks</data>, <data value="details.notes">notes or hints</data>, <data value="details.optional-content">optional sections</data>.</dd>
+        <dd>Provides accessible toggle behavior automatically; screen readers announce expandable content.</dd>
+        <dd>itemscope: <a href="https://schema.org/FAQPage" target="_blank" rel="noopener noreferrer">FAQPage</a> (multiple FAQs) or <a href="https://schema.org/CreativeWork" target="_blank" rel="noopener noreferrer">CreativeWork</a> (single block).</dd>
+      <dt>data</dt>
+        <dd>Machine-readable translation of content.</dd>
+        <dd>Use <em>data</em> when meaning matters, but presentation should remain silent.</dd>
+        <dd>Provides both <data value="machine-readable">machine-readable</data> and <data value="human-readable">human-readable</data> values.</dd>
+        <dd>The <code>value</code> attribute can contain a hierarchical, stable semantic identifier, e.g., <code>value="content.section.introduction"</code>.</dd>
+        <dd>If the content is time- or date-related, use the <code>time</code> element instead.</dd>
+      <dt>time</dt>
+        <dd>The <code>datetime</code> attribute represents a machine-readable format (<code>YYYY-MM-DDThh:mm:ss+TZ</code>).</dd>
+        <dd>MEZ Example: <time datetime="2026-01-03T20:15:00+01:00">3rd January 2026, 20:15</time> (<code>datetime="2026-01-03T20:15:00+01:00"</code>)</dd>
+      <dt>Global and Event Attributes</dt>
+        <dd>All <code>HTML</code> tags also support <a href="https://www.w3schools.com/tags/ref_standardattributes.asp" target="_blank" rel="noopener noreferrer">Global Attributes</a> and many support <a href="https://www.w3schools.com/tags/ref_eventattributes.asp" target="_blank" rel="noopener noreferrer">Event Attributes</a>.<br> See also the <a href="https://www.w3schools.com/tags/ref_attributes.asp" target="_blank" rel="noopener noreferrer">Attribute Reference</a> for inspiration.</dd>
+    </dl>
+
+    <h3>Text Emphasis</h3>
+
+    <h4>Block Elements</h4>
+    <dl>
+      <dt>blockquote</dt>
+        <dd>Indicate as 'q' a section with <em>quoted text</em> from another source.</dd>
+        <dd>Blockquote can specify the source via <code>cite="URL"</code>.</dd>
+        <dd><code>blockquote</code>: <blockquote>for longer, multi-line passages.</blockquote></dd>
+      <dt>pre</dt>
+        <dd>Defines preformatted text. It is displayed as in a text editor, except for HTML tags, which are still rendered. Use '&amp;lt;tag&amp;gt;, if necessary.'</dd>
+    </dl>
+
+    <h4>Inline Elements</h4>
+    <dl>
+      <dt>em vs. strong</dt>
+        <dd><code>em</code>: <em>nuance, content emphasis</em>; <code>strong</code>: <strong>important</strong>. The tags <code>b</code>: <b>bold</b> and <code>i</code>: <i>italic</i> have only visual effects, no semantic meaning.</dd>
+      <dt>small</dt>
+        <dd>Defines smaller text, e.g., <small>copyright</small>, <small>disclaimer</small>, or <small>side-comments</small>.</dd>
+      <dt>mark</dt>
+        <dd>Highlights content that should stand out, e.g. search results hits: <mark>marked text</mark>.</dd>
+      <dt>cite</dt>
+        <dd>Represents the <em>title</em> of a <em>cited creative work</em> (book, poem, song, movie, painting, sculpture, etc.), never a person’s name.</dd>
+        <dd>Use cite for references to other works, not for the work being described.</dd>
+        <dd>Rendered typically in italics: <cite>element</cite>.</dd>
+      <dt>code</dt>
+        <dd>Represents computer code or technical tokens. Displayed in <code>monospace</code> font <code>&lt;code&gt</code> is inline allowed.</dd>
+        <dd>Normally used as <code>&lt;pre&gt;&lt;code&gt;some source code&lt;/code&gt;&lt;/pre&gt;</code> is <strong>not</strong> inline allowed.
+        <dd>Screen readers announce it as ‘code’.</dd>
+      <dt>q</dt>
+        <dd>Indicate as 'blockquote' a section with <em>quoted text</em> from another source.</dd>
+        <dd><code>q</code>: for <q>short <em>inline</em> quotations</q>, browser adds <q>quotation marks</q> automatically.</dd>
+      <dt>abbr</dt>
+        <dd>Defines an abbreviation or acronym: <abbr title="Hypertext Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>.</dd>
+        <dd>The attribute <code>title="abbr written out in full"</code> is displayed when hoovered</dd>
+      <dt>kbd</dt>
+        <dd>Keyboard input or shortcuts, e.g., press '<kbd>Ctrl</kbd> + <kbd>C</kbd>'.</dd>
+      <dt>samp</dt>
+        <dd>Program output: <samp>404 Not Found</samp>.</dd>
+      <dt>var</dt>
+        <dd>Variable / placeholder: <var>E</var> = <var>m</var> * c<sup>2</sup>.</dd>
+      <dt>ins and del</dt>
+        <dd>Defines text inserted or deleted in a document.</dd>
+        <dd>Browsers usually underline <ins>inserted</ins> or strike through <del>deleted</del> text.</dd>
+    </dl>
+  </section>
+</main>
+
+  
+<footer>
+<!--  footer starts -->
+<article id="imprint" aria-labelledby="imprint-title">
+  <h2 id="imprint-title">Imprint</h2>
+    <address itemscope itemtype="https://schema.org/Person">
+      <span itemprop="name">Electrical Smile</span>, 
+      <a href="mailto:esmile@posteo.net" itemprop="email">esmile@posteo.net</a>
+    </address>
+    © <time datetime="2026-00-00T00:00:00+00:00">January 2026</time>
+  </article>
+<!-- footer ends -->
+</footer>
+
+</body>

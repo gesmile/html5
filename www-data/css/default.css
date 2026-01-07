@@ -1,0 +1,309 @@
+/* ======================
+   base layout
+====================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  --body-color: #111;
+  --body-bg:  #eef9f4;
+/*  --section-bg: rgb(236, 244, 245); */
+  --section-bg: #fefefe; 
+  --strong-fg:  rgb(14, 65, 177);
+  --lines: #77F;
+  --list-items:  rgb(28, 114, 47);
+  --cite-code:  rgb(126, 8, 8);
+  --headlines: rgb(5, 147, 33);
+  --main-bg:  rgba(252, 252, 156, 0.5);
+  --nav-bg: #aaF011;
+/*  --nav-hoover: #ed8d17; */
+  --nav-hoover: #FF00FF;
+  --footer-line: #FF00FF;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.6;
+  color: var(--body-color);
+  background: var(--body-bg);
+}
+
+/* ======================
+   Header / Navigation
+====================== */
+
+
+header {
+  padding: 0.5rem;
+/*   border-bottom: 2px solid var(--headlines); */
+}
+
+nav ul {
+  display: flex;
+  gap: 1rem;
+  padding: 0.2rem;
+  list-style: none;
+  background: var(--nav-bg);
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  margin: 0.7em;
+}
+
+
+[aria-current=page] {
+  font-weight: bold;
+  padding: 0.1rem;
+  color: var(--headlines);
+  background: var(--body-bg);
+}
+
+/* ======================
+   Links
+====================== */
+
+a{
+  text-decoration: none;
+  color: var(--body-color);
+}
+
+a:hover,
+a:focus {
+  color: var(--nav-hoover);
+}
+
+a[href^="http"]::before {
+  content: "\1F517";
+  margin-right: 4px;
+}
+
+
+/* ======================
+   content
+====================== */
+
+main {
+  padding: 1rem;
+/*  --main-bg:  #fefefe; */
+  background: var(--main-bg);
+}
+
+article {
+background: var(--body-bg);
+border: 2px solid var(--lines);
+padding: 1rem;
+}
+
+section {
+background:var(--section-bg); 
+
+/* do not remove */
+border-bottom: 2px dashed var(--lines);
+
+padding: 1rem;
+}
+
+section p {
+    /* background:  var(--main-bg); */
+    color: var(--body-color);
+    /* background: inherit; */
+    /* background: var(--body-bg); */
+    background: lab(97.48% -6.26 7);
+}
+
+section > strong, em, b, i, data {
+    color: var(--strong-fg);
+    background: inherit;
+}
+
+section > ul, li, dd, dl {
+    color: var(--list-items);
+    background: inherit;
+}
+
+section dt {
+    color: var(--cite-code);
+    background: inherit;
+    font-size: 1.1em;
+}
+
+section > cite, code, pre {
+    color: var(--cite-code);
+    background: inherit;
+}
+
+
+/* ======================
+   Headlines 
+====================== */
+
+/*  Headline hgroup article  H1  */
+
+header hgroup {
+  margin: 0 0 1.5rem;
+  color:var(--headlines);
+}
+
+header h1 {
+  margin: 0;
+  position: relative;
+  padding:0 0 0 55px;
+  background: url('../images/logo.png') no-repeat left center;
+  background-size: 50px;
+}
+
+header hgroup > h1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 40%;
+  height: 0.2rem;
+  background-color: currentColor;
+  opacity: 0.35;
+  border-radius: 3px;
+}
+
+header hgroup > p {
+  margin: 0 0 0 0.5em;
+  background: inherit;
+}
+
+
+/*  Headlines article  H2  */
+
+article > h2 {
+    font-size: clamp(0.8rem, 1.5vw, 1rem);
+    margin: 0;
+    padding-bottom: 0.2rem;
+    position: relative;
+    color:var(--headlines);
+}
+
+/*  Headlines  section hgroup  H2 + p  (old: 2) */
+
+section hgroup {
+  margin: 0 0 1.5rem;
+}
+
+section hgroup > h2 {
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--headlines);
+  margin: 0;
+  padding-bottom: 0.2rem;
+  position: relative;
+}
+
+section hgroup > h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 0.2rem;
+  background-color: currentColor;
+  opacity: 0.35;
+  border-radius: 3px;
+}
+
+section hgroup > p {
+  margin: 0 0 0 0.5em;
+  background: var(--section-bg);
+  color: var(--list-items);
+}
+
+
+/* Header h2 Headline new, without hgroup  (new: 1) */
+
+h2.sectionheader  {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    font-weight: 500;
+    line-height: 1.2;
+    padding-bottom: 0.2rem;
+    color:var(--headlines);
+    margin: 0;
+    position: relative;
+}
+
+h2.sectionheader::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 30%;
+  height: 0.2rem;
+  background-color: currentColor;
+  opacity: 0.35;
+  border-radius: 3px;
+}
+
+p.sectionheader  {
+  margin: 0 0 0 0.5em;
+  background: var(--section-bg);
+  color: var(--list-items);
+}
+
+p.sectionheader > em  {
+  color: var(--list-items);
+}
+
+/*  Headlines section hgroup H3 - H6  */
+
+section h3, h4, h5, h6 {
+  color: var(--headlines);
+}
+
+/* ======================
+   Form
+====================== */
+
+form[role="search"] {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+/* ======================
+   Images
+====================== */
+
+figure {
+  float:left;
+  margin:0 1em 1em 0;
+  border: dotted;
+  color: var(--lines);
+}
+
+section img {
+  border: solid;
+  color: var(--headlines);
+}
+
+
+/* ======================
+   Footer
+====================== */
+
+footer {
+  padding: 2rem;
+  border-top: 2px solid var(--footer-line);
+  color: var(--body-color);
+  background: var(--body-bg);
+}
+
+/* ======================
+   Responsive
+====================== */
+
+@media (max-width: 600px) {
+  nav ul {
+    flex-direction: column;
+  }
+}
+
