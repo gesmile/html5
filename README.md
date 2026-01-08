@@ -30,6 +30,7 @@ Get the source via `git clone  https://github.com/gesmile/html5.git`, look, play
 * The design with hgroup(h1/h2 + p) is outdated and needs to be rebuilt, like done in default.html Section 3
 * Responsive menu with 'closed button' when displayed on cell phones.
 * Back-to-top menu following these style guides: https://www.nngroup.com/articles/back-to-top/
+* Define a semantic meaning of a couple inline tag elements. Then implementing these strict over all documents.
 
 
 # Personal Information
