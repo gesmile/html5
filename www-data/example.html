@@ -7,7 +7,7 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/default.css"  title="default.css">
   <link rel="alternate stylesheet" href="css/standard.css" title="standard.css">
-  <title>HTML5  Example</title>
+  <title>HTML5 Example</title>
 </head>
 
 <body>
@@ -57,7 +57,7 @@
       <p>text section <strong>two</strong>. Sections end with a <code>dashed</code> line.</p>
     </hgroup>
 
-    <p>1<sup>st</sup> Paragraph of 2<sup>nd</sup> section: (Here starts <data value="thesis.speak.honestly">what you <q>really</q> <em>want</em> to <q>say</data></q>...)</p>
+    <p>1<sup>st</sup> Paragraph of 2<sup>nd</sup> section: (Here starts <q><data value="thesis.speak.honestly">what you <q>really</q> <em>want</em> to say</data></q>...)</p>
     <h3>&lt;h3&gt; one more headline</h3>
     <p>2<sup>nd</sup> Paragraph of 2<sup>nd</sup> section: (<abbr title="Wohlan, den Mutigen gehört die Welt">Fortune favors the bold</abbr> - <abbr title="Das Glück begünstigt die Kühnen">Audaces fortuna iuvat</abbr> ).</p>
     <h4>&lt;h4&gt; and more headlines</h4>
@@ -88,10 +88,10 @@
       <dd>description 3</dd>
     </dl>
         <p>8<sup>th</sup> Paragraph of 2<sup>nd</sup> section: (<q><em>Synthesis</em>: <data value="synthesis.expand">New, expanded standpoint</data></q>) sed diam nonumy eirmod tempor invidunt ut <q>labore et dolore magna(&lt;q&gt;)</q> aliquyam erat, <cite>sed diam voluptua (&lt;cite&gt;)</cite>. 
-        At vero eos et accusam et justo duo dolores et ea rebum. <details><summary>clita kasd gubergren (&lt;details&gt;),</summary>  no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</details> 
-        Lorem ipsum dolor sit amet, <abbr title="consetetur sadipscing elitr">cse (&lt;abbr&gt;)</abbr>, sed diam nonumy eirmod <samp>tempor invidunt ut labore et dolore (&lt;samp&gt;)</samp> magna aliquyam erat, sed diam voluptua.</p>
+        At vero eos et accusam et justo duo dolores et ea rebum. Lorem ipsum dolor sit amet, <abbr title="consetetur sadipscing elitr">cse (&lt;abbr&gt;)</abbr>, sed diam nonumy eirmod <samp>tempor invidunt ut labore et dolore (&lt;samp&gt;)</samp> magna aliquyam erat, sed diam voluptua.</p>
+    <details><summary>clita kasd gubergren (&lt;details&gt;) <em>not allowed in paragraph</em>,</summary>  no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.</details> 
     <ul>
-        <li>li 1 (&lt;li&gt;)</li>
+        <li>li 1 (&lt;li&gt;) <em>not allowed in paragraph</em></li>
         <li>li 2</li>
         <li>li 3</li>
     </ul>
@@ -125,8 +125,8 @@
   <h2>2<sup>nd</sup> article (inside main): <strong>feed to main article</strong> (article > h2)</h2>
   <div id="ticker-grid" role="log" aria-live="polite" aria-atomic="true"> 
     <p class="event">
-      <span class="event-title">&#11194; link:</span>
-      <span class="event-info">OVERLAPPING WHITE SQUARES</span>
+      <span class="event-title">&#128279; link:</span>
+      <span class="event-info">LINK SYMBOL</span>
     </p>
     <p class="event">
       <span class="event-title">&#9743; phone:</span>
@@ -148,7 +148,7 @@
 <article>
 <h2>3<sup>rd</sup> article (outside main): independent <strong>form</strong></h2>
 
-<form role="search" action="" method="get">
+<form role="search" action="/" method="get">
   <label for="q">Find: </label>
   <input
     type="search"
@@ -176,16 +176,15 @@
       <a href="tel:+49XXXXXXXXXXX" itemprop="telephone">Telefon:&nbsp;+49&nbsp;XXX&nbsp;XXXXXXXX</a><br>
       <a href="mailto:info@example.com" itemprop="email">E-Mail:&nbsp;info@example.com</a><br>
     </address>
-  <p>© January <time datetime="2026-00-00T00:00:00+00:00">2026</time> by Max Mustermann</p>
+  <p>© January <time datetime="2026-01-01T00:00:00+00:00">2026</time> by Max Mustermann</p>
   <hr>
     <p>4<sup>th</sup> article (2<sup>nd</sup> outsode main), 1<sup>st</sup> in footer: <strong>Imprint</strong> <code>&lt;article id="imprint" aria-labelledby="imprint-title"&gt;</code></p>
 </article>
-<article>
+<article itemscope itemtype="https://schema.org/WebPage">
   <h2 id="awards">Awards</h2>
-  <div
-  itemprop="subjectOf"
-  itemscope
-  itemtype="https://schema.org/WebPage">
+  <div itemprop="subjectOf"> 
+      <meta itemprop="url" content="https://tmp.hedankenfalle.de/html5/example.html" >
+      <meta itemprop="name" content="almost minimal HTML5: example page" >
   <figure>
   <a href="https://jigsaw.w3.org/css-validator/check/referer"
      rel="external noopener">
