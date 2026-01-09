@@ -46,6 +46,7 @@ nav ul {
   padding: 0.2rem;
   list-style: none;
   background: var(--nav-bg);
+  border-radius: 8px;
 }
 
 nav a {
@@ -60,6 +61,7 @@ nav a {
   padding: 0.1rem;
   color: var(--headlines);
   background: var(--body-bg);
+  border-radius: 8px;
 }
 
 /* ======================
