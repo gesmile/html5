@@ -29,20 +29,23 @@ Feedback to improve the project is welcome.
 ## To Dos
 
 * The design with hgroup(h1/h2 + p) is outdated and needs to be rebuilt, like done in example.html Section 3
+* Add clean, valid and meaningful microdata (RDF) and JSON-LD to the documents as well as make these ids available (comming soon)
+* Add license information ([CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)) in structural data concepts (REL: ccREL + schema.org).
 * Responsive menu with 'closed button' when displayed on cell phones.
 * Back-to-top menu following these style guides: https://www.nngroup.com/articles/back-to-top/
-* Define a semantic meaning of a couple inline tag elements. Then implementing these strict over all documents.
+* Responsive menu with 'closed button' when displayed on cell phones.
+* Define the semantic meaning of a couple used inline tag elements. Then implementing these strict over all documents to have an additional data layer.
 
 
 # Personal Information
 
-After starting with `HTML 3.2` in the last century, I grew frustrated with `HTML 4.x` and `XHTML` during the _browser wars_. I stepped away from web development and shifted my focus to networking — particularly remote access, firewalls, and AAA/PKI.
+After starting with `HTML 3.2` in the last century, I became increasingly dissatisfied with `HTML 4.x` and `XHTML` during the browser wars. I stepped away from web development and shifted my focus to networking — particularly remote access, firewalls, and AAA/PKI.
 
-In recent years, my interest has returned to information management and to exploring the web as more than a medium for presentation. I remained loosely connected to the web through my fondness for projects such as [Drupal](https://new.drupal.org/home) and [NetBox](https://netboxlabs.com/).
+In recent years, my interest has returned to information management and to exploring the web as more than just a presentation layer. Throughout this time, I remained loosely connected to web technologies through my interest in web-based content and infrastructure management systems, as well as the use of various RESTful APIs.
 
 ## Disclaimer
 
-I have taken great care in compiling this information; however, I cannot guarantee its accuracy. Use this information at your own risk. No liability is accepted.
+The information in this repository has been prepared with care, but no guarantee is given regarding its accuracy or completeness. Use it at your own risk.
 
 # Data
 
