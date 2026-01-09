@@ -28,7 +28,7 @@
         <li><a href="index.html" aria-current="page">Home</a></li>
         <li><a href="example.html">Example</a></li>
         <li><a href="default.html">Default</a></li>
-        <li><a href="https://github.com/gesmile/html5" target="_blank" rel="noopener noreferrer">github Source</a></li>
+        <li><a href="https://github.com/gesmile/html5" rel="noreferrer">github Source</a></li>
       </ul>
     </nav>
 
@@ -107,71 +107,83 @@
 <section id="section_3">
   <hgroup>
     <h2>Semantic Elements</h2>
-    <p>Agent-ready, accessible microdata management</p>
+    <p>Agent-ready, embedded accessible structured data management</p>
   </hgroup>
+
+  <p>All in all, <abbr title="JavaScript Object Notation for Linked Data"><strong>JSON-LD</strong></abbr> is the <em>preferred way</em> using structured data in <strong>HTML5</strong> documents.</p>
+
   <h3>Standards and Organizations</h3>
   <dl>
     <dt>Standards</dt>
         <dd>Use UTF-8 encoding, add valid charset and language attributes.</dd>
-        <dd>Read and follow (<a href="https://datatracker.ietf.org/" target="_blank" rel="noopener noreferrer"><abbr title="Request for Comment">RFC</abbr></a>) standards and many more like <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><abbr title="World Wide Web Consortium">W3C</abbr></a>, <a href="https://whatwg.org/" target="_blank" rel="noopener noreferrer"><abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr></a>, <a href="" ></a>
-        , <a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer"><abbr title="Web Accessibility Initiative – Accessible Rich Internet Applications">WAI-ARIA</abbr></a>.</dd>
+        <dd>Read and follow (<a href="https://datatracker.ietf.org/" target="_blank" rel="noopener noreferrer"><abbr title="Request for Comment">RFC</abbr></a>) standards and many more like <a href="https://www.w3.org/" target="_blank" rel="noopener noreferrer"><abbr title="World Wide Web Consortium">W3C</abbr></a>, <a href="https://whatwg.org/" target="_blank" rel="noopener noreferrer"><abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr></a>, <a href="" ></a>.</dd>
     <dt>Schema.org</dt>
-        <dd><a href="https://schema.org/" target="_blank" rel="noopener noreferrer" >Schema.org</a> is a collaborative, community activity with a mission to create, maintain, and promote schema for structured data.</dd>
+        <dd><a href="https://schema.org/" target="_blank" rel="noopener noreferrer" >Schema.org</a> is a <em>collaborative, community activity</em> with a mission to create, maintain, and promote schema for structured data.</dd>
+        <dd>Schema.org is good for <strong>SEO</strong> purposes.
+        <ul>
+          <li><a href="https://schema.org/docs/gs.html" target="_blank" rel="noopener noreferrer" >Getting started with Schema.org</a></li>
+          <li><a href="https://developers.google.com/search/docs/guides/intro-structured-data" target="_blank"  rel="noopener noreferrer">Google's way</a> using structured data.</li>
+        </ul></dd>
     <dt>RDF and OWL</dt>
-        <dd><a href="https://www.w3.org/TR/rdf-schema/" target="_blank" rel="noopener noreferrer"><abbr title="Resource Description Framework">RDF</abbr></a> is a data-modelling  vocabulary.
+        <dd><a href="https://www.w3.org/RDF/" target="_blank" rel="noopener noreferrer"><abbr title="Resource Description Framework">RDF</abbr></a> is a data-modelling vocabulary and can be embedded in HTML5 using RDFa 1.1 but JSON-LD is often preferred due to easier integration and separation from markup.</dd>
         <dd><a href="https://en.wikipedia.org/wiki/Web_Ontology_Language" target="_blank" rel="noopener noreferrer"><abbr title="Web Ontology Language">OWL</abbr></a> is a family of knowledge representation languages for authoring ontologies.<dd>
-        <dd><a href="https://www.ontologyportal.org/" target="_blank" rel="noopener noreferrer"><abbr title="Suggested Upper Merged Ontology">SUMO</abbr></a> (Suggested Upper Merged Ontology) is a  free (GPLv3) formal ontology owned by the IEEE.</dd>
+        <dd><a href="https://www.ontologyportal.org/" target="_blank" rel="noopener noreferrer"><abbr title="Suggested Upper Merged Ontology">SUMO</abbr></a> is a free (GPLv3) formal ontology owned by the IEEE.</dd>
+        <dd><abbr title="Dublin Core Metadata Initiative"><a href="https://www.dublincore.org/specifications/dublin-core/dcmi-terms/" target="_blank" rel="noopener noreferrer">DCMI</a></abbr>, known as <em>Dublin Core vocabulary</em>, is one of the oldest (1995) general purpose metadata vocabulary for describing resources of any type. </dd>
+        <dd><abbr title="Shapes Constraint Language"><a href="https://www.w3.org/TR/shacl/" target="_blank" rel="noopener noreferrer">SHACL</a></abbr> is validating RDF graphs against a set of conditions. This helps for a variety of purposes beside validation, including user interface building, code generation and data integration</dd>
+        <dd><abbr title="Simple Knowledge Organization System"><a href="https://www.w3.org/TR/skos-reference/" target="_blank" rel="noopener noreferrer">SKOS</a></abbr> is a <em>W3C recommendation</em> designed for representation of thesauri, classification schemes, taxonomies, subject-heading systems, or any other type of structured controlled vocabulary.</dd>
+        <dd><abbr title="Upper Mapping and Binding Exchange Layer"><a href="https://github.com/structureddynamics/UMBEL/tree/master" target="_blank" rel="noopener noreferrer">UMBEL</a></abbr> (retired 2019) is a logically organized knowledge graph, written in OWL.</dd>
+        <dd>Rights Expression Language (REL) are a machine-processable language used to express intellectual property rights.
+          <ul>
+            <li><abbr title="Creative Commons Rights Expression Language "><a href="https://creativecommons.org/ns" target="_blank" rel="noopener noreferrer">ccREL</a></abbr> is a specification describing how license information may be described using RDF and how license information may be attached to works. (easy, common, works with Schema.org) </li>
+            <li><abbr title="W3C Open Digital Rights Language"><a href="https://www.w3.org/TR/odrl/" target="_blank" rel="noopener noreferrer">ODRL</a></abbr> is a policy expression language, which became an endorsed W3C Recommendation 2018 (complex, expressive, for business applications, uses RDF/JSON/JSON-LD).</li>
+            <li><abbr title="Provenance Ontology"><a href="https://www.w3.org/TR/prov-o/" target="_blank" rel="noopener noreferrer">PROV-O</a></abbr> is a <em>W3C recommendation</em> and provides a set of classes, properties, and restrictions that can be used to represent and interchange <em>provenance information</em>.</li>
+            <li><a href="https://wiki.creativecommons.org/wiki/Liblicense" target="_blank" rel="noopener noreferrer">liblicense</a> Bulid <em>license-aware applications</em>.</li>
+            <li><abbr title="Creative Commons License RDF"><a href="https://wiki.creativecommons.org/wiki/License_RDF" target="_blank" rel="noopener noreferrer">License RDF</a></abbr> <em>Creative Commons</em> provides information on licenses for three audiences: lawyers, humans and machines.<br>
+            <li><a href="https://rightsstatements.org/en/" target="_blank" rel="noopener noreferrer"><em>Rights Statements</em></a> from Dublin Core provide simple and standardized terms not an REL, but sometimes good enough.</li>
+          </ul>
+        </dd>
+        <dd>Other Domain-specific Ontologies:
+          <ul>
+            <li><abb title="Bibliographic Ontology"><a href="https://www.dublincore.org/specifications/bibo/bibo/" target="_blank" rel="noopener noreferrer">BIBO</a></abb>: is a independent RDF ontology that builds upon <em>Dublin Core</em> terms. It can describe bibliographic things like books or magazines.</li>
+            <li><abb title="Data Catalog Vocabulary"><a href="https://www.w3.org/TR/vocab-dcat-3/" target="_blank" rel="noopener noreferrer">DCAT</a></abb>: RDF vocabulary designed to facilitate interoperability between data catalogs published on the Web.</li>
+            <li><abb title="Semantically-Interlinked Online Communities"><a href="http://www.sioc-project.org/" target="_blank" rel="noopener noreferrer">SIOC</a></abb>: aims to enable the integration of online community information (Social Web) in conjunction with the FOAF vocabulary.</li>
+          </ul>
+        </dd>
     <dt><abbr title="Accessible Rich Internet Applications">ARIA</abbr></dt>
-        <dd>ARIA adds semantic meaning only when native HTML semantics are insufficient.</dd>
+        <dd> <a href="https://www.w3.org/WAI/standards-guidelines/aria/" target="_blank" rel="noopener noreferrer"><abbr title="Web Accessibility Initiative – Accessible Rich Internet Applications">WAI-ARIA</abbr></a> adds semantic meaning only when native HTML semantics are insufficient and with focus on <strong>accessibility</strong>.</dd>
         <dd>First rule of ARIA: Do not use ARIA if native HTML can express the same meaning.</dd>
-    <dt><abbr title="Friend of a Friend"><a href="https://xmlns.com/foaf/spec/" target="_blank" rel="noopener noreferrer">FOAF</a></abbr></dt>
-      <dd>Excessive <em>personally identifiable</em> machine-readable <em>data</em>, e.g.  is possible but can pose a <strong>security risk</strong>.</dd>
-      <dd>Data minimization and conscious selection are appropriate. Disclose as much as necessary and as little as possible.</dd>
+    <dt>FOAF</dt>
+      <dd><abbr title="Friend of a Friend"><a href="https://xmlns.com/foaf/spec/" target="_blank" rel="noopener noreferrer">FOAF</a></abbr> (Friend of a Friend) Uses RDF vocabularies to describe people and their relationships, which may include personally identifiable data.</dd>
+      <dd>It works with the similar social idea of 'knowing through relationships' like web-of-trust does, but FOAF describes only social closeness, not trustworthiness.</dd>
     <dt>Validation Tools</dt>
       <dd>Use linter and validation:
           <ul>
             <li><a href="https://validator.w3.org/" target="_blank" rel="noopener noreferrer"><data >W3C</data></a></li>
             <li><a href="https://validator.schema.org/" target="_blank" rel="noopener noreferrer">validator.schema.org</a></li>
             <li><a href="https://www.w3.org/RDF/Validator/" target="_blank" rel="noopener noreferrer">RDF validator</a></li>
+            <li><a href="https://search.google.com/test/rich-results" target="_blank" rel="noopener noreferrer">Google's Rich Search tester</a></li>
+            <li><a href="https://json-ld.org/playground/" target="_blank" rel="noopener noreferrer">JSON-LD Playgound</a></li>
+            
           </ul>
+      <dt>Rethink</dt>
+          <dd><q><small>Disclose as much as necessary and as little as possible.</small></q><br>A separation of concerns, data minimization, explicit and conscious semantics are more important than expressive power.</dd>
       </dd>
-    </dl>
-  <h3>Microdata</h3>
+
+  <h3>JSON-LD</h3>
+  <p>A W3C Recommendation using the RDF models for serialized linked data.</p>
+
     <dl>
-      <dt>itemscope / itemtype</dt>
-        <dd>An itemscope defines the boundary of a <em>new semantic object</em>, it's scope, e.g. a <strong>div</strong> or <strong>article</strong> container or any other suitable.</dd>
-        <dd>An itemtype specifies the meaning of this container, classifies that object <em>by assigning a concrete type</em>, usually from <strong>schema.org</strong> or any other ontology.</dd>
-        <dd>Itemscope and itemtype only make sense when <em>used together</em>:<br>
-        <code>&lt;div itemscope itemtype="https://schema.org/Person"&gt;...&lt;/div&gt;</code></dd>
-        <dd>Any element with itemscope creates a <em>new</em> scope. <em>Nested</em> microdata itemscopes are allowed and indicate a <em>relation</em> to the <em>nearest ancestor</em> item.</dd>
-      <dt>itemprop / itemid</dt>
-        <dd>An <em>itemprop</em> attribute only make sense <em>within</em> an <em>itemscope</em>.</dd>
-        <dd>Then every HTML element may have an <code>itemprop</code> to <em>add</em> one or more <em>properties</em> to one or more items:<br>
-        <code>&lt;div itemprop="author" ...&gt;Author data&lt;/div&gt;</code></dd>
-        <dd>If specified, it must have at least one value or an unordered set of unique space-separated tokens: <br><code>itemprop="author editor reviewer publisher"</code></dd>
-        <dd>The <code>itemid</code> provides a <em>global identifier</em> (<strong>URL</strong>) for <em>this</em> item. Useful to link the same entity across documents.</dd>
-        <dd><code>&lt;div itemid="https://example.com/person/max" ...&gt;Max data&lt;/div&gt;</code></dd>
-        <dd>
-        <details><summary>see <code>HTML</code> microdata example:</summary>
-          <pre>
-&lt;article
-  itemscope itemtype="https://schema.org/CreativeWork"
-  itemid="https://example.com/work/almost-minimal-html5"&gt;
-  &lt;h1 itemprop="name"&gt;almost minimal HTML5&lt;/h1&gt;
-    &lt;p&gt;&lt;time itemprop="dateCreated datePublished" datetime="2026-01"&gt;Created and published in January 2026&lt;/time&gt;&lt;/p&gt;
-  &lt;div
-    itemscope itemtype="https://schema.org/Person"
-    itemprop="author editor reviewer publisher"
-    itemid="https://example.com/person/max-mustermann"&gt;
-    &lt;span itemprop="name"&gt;Max Mustermann&lt;/span&gt;
-  &lt;/div&gt;
-&lt;/article&gt;
-          </pre>
-        </details>
       <dt>Structured Data Formats</dt>
-        <dd><abbr title="JavaScript Object Notation for Linked Data">JSON-LD</abbr>, Microdata, and <abbr title="Resource Description Framework">RDF</abbr> are supported ways to embed structured data into HTML documents.</dd>
-        <dd>JSON-LD does not allow assigning multiple roles to a single property value, so each role (author, editor, reviewer, publisher) is modeled as a separate property, even when referring to the same entity.</dd>
-        <dd>JSON-LD is preferred by search engines to describe structured data without modifying visible HTML, e.g.: <details><summary>see <code>application/ld+json</code> example:</summary>
+        <dd><abbr title="JavaScript Object Notation for Linked Data"><a href="https://json-ld.org/" target="_blank" rel="noopener noreferrer">JSON-LD</a></abbr> is the <em>supported standard</em> way to embed structured data into <em>HTML5 documents</em>.</dd>
+        <dd><abbr title="Resource Description Framework Schema"><a href="https://www.w3.org/TR/rdf-schema/" target="_blank" rel="noopener noreferrer">RDFS</a></abbr> is a minimal-ontologie and provides a data-modelling vocabulary for RDF data. It is also a <em>supported standard</em> way to embed structured data into HTML5 documents.<dd>
+        <dd><abbr title="Resource Description Framework Schema"><a href="https://www.w3.org/TR/rdf-schema/" target="_blank" rel="noopener noreferrer">RDFS</a></abbr> RDFS is a minimal ontology language used by RDF-based formats (RDFa, JSON-LD). </dd>
+        <dd>Unlike Microdata, JSON-LD does not support multiple role assignments on a single property. Each role - such as author, editor, reviewer, or publisher - must be expressed as its own property, even when they all point to the same person. While this increases verbosity, JSON-LD keeps <em>HTML markup untouched</em> by encapsulating all structured data in a single script element.</dd>
+        <dd><a href="https://www.w3.org/TR/json-ld11/" target="_blank" rel="noopener noreferrer">JSON-LD Standard</a> is <em>preferred by search engines</em> to describe structured data without modifying visible HTML.</dd>
+
+        
+
+
+        <dd><details><summary>see <code>application/ld+json</code> example:</summary>
           <pre>
 &lt;script type="application/ld+json"&gt;
 {
@@ -211,6 +223,43 @@
         </details>
         </dd>
     </dl>
+
+    <h3>Microdata</h3>
+    <p>Microdata is part of the HTML-specification using attributes as data container.</p>
+
+    <dl>
+      <dt>itemscope / itemtype</dt>
+        <dd>An itemscope defines the boundary of a <em>new semantic object</em>, it's scope, e.g. a <strong>div</strong> or <strong>article</strong> container or any other suitable.</dd>
+        <dd>An itemtype specifies the meaning of <em>this created</em> container, classifies that object <em>by assigning a concrete type</em>, usually from <strong>schema.org</strong> or any <em>other ontology</em>.</dd>
+        <dd>Itemscope and itemtype <em>only</em> make sense when used <em>together</em>:<br>
+        <code>&lt;div itemscope itemtype="https://schema.org/Person"&gt;...&lt;/div&gt;</code></dd>
+        <dd><em>Any</em> element with itemscope creates a <em>new</em> scope. <em>Nested</em> microdata itemscopes are allowed and indicate a <em>relation</em> to the <em>nearest ancestor</em> item.</dd>
+      <dt>itemprop / itemid</dt>
+        <dd>An <em>itemprop</em> attribute <em>only</em> make sense within an <em>itemscope</em>.</dd>
+        <dd>Then every HTML element may have an <code>itemprop</code> to <em>add</em> one or more <em>properties</em> to one or more items:<br>
+        <code>&lt;div itemprop="author" ...&gt;Author data&lt;/div&gt;</code></dd>
+        <dd>If specified, it must have at least one value or an unordered set of <em>unique space-separated tokens</em>: <br><code>itemprop="author editor reviewer publisher"</code></dd>
+        <dd>The <code>itemid</code> provides a global identifier (<em>URL</em>) for this item. Useful to <em>link</em> the same entity <em>across documents</em>.</dd>
+        <dd><code>&lt;div itemid="https://example.com/person/max" ...&gt;Max data&lt;/div&gt;</code></dd>
+        <dd>
+        <details><summary>see <code>HTML</code> microdata example:</summary>
+          <pre>
+&lt;article
+  itemscope itemtype="https://schema.org/CreativeWork"
+  itemid="https://example.com/work/almost-minimal-html5"&gt;
+  &lt;h1 itemprop="name"&gt;almost minimal HTML5&lt;/h1&gt;
+    &lt;p&gt;&lt;time itemprop="dateCreated datePublished" datetime="2026-01"&gt;Created and published in January 2026&lt;/time&gt;&lt;/p&gt;
+  &lt;div
+    itemscope itemtype="https://schema.org/Person"
+    itemprop="author editor reviewer publisher"
+    itemid="https://example.com/person/max-mustermann"&gt;
+    &lt;span itemprop="name"&gt;Max Mustermann&lt;/span&gt;
+  &lt;/div&gt;
+&lt;/article&gt;
+          </pre>
+        </details>
+        </dd>
+    </dl>
   </section>
 
   <section id="section_4">
@@ -222,7 +271,7 @@
     <h3>Content Structure</h3>
     <dl>
       <dt>headlines</dt>
-        <dd>Best practice: only one visible <code>h1</code> headline per page.</dd>
+        <dd>Of course, headlines! Best practice: only one visible <code>h1</code> headline per page. Clean structure in main section, starting with <code>h2</code>.</dd>
         <dd>Do not skip heading levels — start with <code>h1</code>, max to <code>h6</code>.</dd>
         <dd>Headings are important for <em>text structure</em> and are used to generate automatic <em>tables of contents</em>.</dd>
         <dd>Headings are used by screen readers for <em>navigation</em> and by search engines to assess <em>content importance</em>.</dd>
@@ -244,14 +293,17 @@
       <dt>ol, ul, li</dt>
         <dd><code>ol</code>: ordered and <code>ul</code>: unordered list items (<code>li</code>) are very semantic, too.</dd>
       <dt>dfn</dt>
-        <dd>The <code>dfn</code> tag stands for the "definition element" and specifies a term that is being defined.</dd>
-        <dd>The nearest parent of the <code>dfn</code> tag should also contain the definition/explanation.</dd>
-        <dd>Examples of content inside <code>dfn</code>:
+        <dd>The <em>dfn</em> tag stands for the "definition element" and specifies a term that is being defined.</dd>
+        <dd>The nearest parent of the <data value="html.tag.inline.dfn">dfn</data> tag should contain the <em>definition/explanation</em>. This has various possibilities, e.g.<br>
           <ul>
-            <li>Just as the content of the <code>dfn</code> element: <dfn>HTML</dfn> is the standard markup language for creating web pages.</li>
-            <li>With the <code>title</code> attribute: <dfn title="HyperText Markup Language">HTML</dfn>.</li>
-            <li>With an <code>abbr</code> inside <code>dfn</code>: <dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn>.</li>
-            <li>With an <code>id</code> attribute added for linking: <dfn id="html-def">HTML</dfn>.</li>
+            <li><code>&lt;span&gt;&lt;dfn&gt;HTML&lt;/dfn&gt;HyperText Markup Language&lt;/span&gt;</code><br>
+              Content of surrounding element: <span><dfn>HTML</dfn> HyperText Markup Language</span>.
+            <li><code>&lt;span&gt;&lt;dfn title="HyperText Markup Language"&gt;HTML&lt;/dfn&gt;</code><br>
+              The <em>title</em> attribute works as tooltip, but needs often mouse-over: <dfn title="HyperText Markup Language">HTML</dfn>.</li>
+            <li><code>&lt;dfn&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;&lt;/dfn&gt;</code><br>
+              Better safe than sorry with an <em>abbr</em> inside <em>dfn</em>: <dfn><abbr title="HyperText Markup Language">HTML</abbr></dfn>.<br>
+            <li><code>&lt;dfn id="def-html"&gt;HTML&lt;/dfn&gt;</code><br>
+              Link with an <a href="#def-html" title="&lt;a href=&quot;&#35;def-html&quot;&gt;anchor&lt/a&gt"><em>anchor</em></a> to the  <em>id</em>: <dfn id="html-def">HTML</dfn>.
           </ul>
         </dd>
     </dl>
@@ -259,7 +311,7 @@
     <h3>Special HTML Elements</h3>
     <dl>
       <dt>meta</dt>
-        <dd>Meta data within the <code>head</code> element transports a lot of semantic information.</dd>
+        <dd>Meta data within the <code>head</code> element can transports a lot of semantic information.</dd>
       <dt>address</dt>
         <dd>Contact information for the nearest article or the whole document.</dd>
         <dd>Typically used for <data value="address.contact.author">author</data> or <data value="address.contact.organization">organization</data> contact details, not for general postal addresses.</dd>
@@ -319,7 +371,7 @@
         <dd>Rendered typically in italics: <cite>element</cite>.</dd>
       <dt>code</dt>
         <dd>Represents computer code or technical tokens. Displayed in <code>monospace</code> font <code>&lt;code&gt</code> is inline allowed.</dd>
-        <dd>Normally used as <code>&lt;pre&gt;&lt;code&gt;some source code&lt;/code&gt;&lt;/pre&gt;</code> is <strong>not</strong> inline allowed.
+        <dd>Normally used as <code>&lt;pre&gt;&lt;code&gt;some multi-line source code&lt;/code&gt;&lt;/pre&gt;</code> is because of <em>pre</em> not inline allowed.
         <dd>Screen readers announce it as ‘code’.</dd>
       <dt>q</dt>
         <dd>Indicate as 'blockquote' a section with <em>quoted text</em> from another source.</dd>
@@ -349,7 +401,7 @@
       <span itemprop="name">Electrical Smile</span>, 
       <a href="mailto:esmile@posteo.net" itemprop="email">esmile@posteo.net</a>
     </address>
-    © <time datetime="2026-00-00T00:00:00+00:00">January 2026</time>
+    © <time datetime="2026-01-00T00:00:00+00:00">January 2026</time>
   </article>
 <!-- footer ends -->
 </footer>
