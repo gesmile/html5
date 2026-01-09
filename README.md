@@ -3,7 +3,7 @@
 This is a private learning repository for a simple static HTML5 page.   
 It's meant as an easy accessible semantic web document for learning and experimenting purpose.
 
-This **almost minimal HTML5** document has to two faces.
+This **almost minimal HTML5** document has two faces.
 
 * One visual, browser-based human readable content, starting with the `index.html` file or at [tmp.gedankenfalle.de/html5/](https://tmp.gedankenfalle.de/html5/)
 * One parser-based, which lets machines read through the _eyes_ of different libraries 'data' from inside the document.
@@ -23,11 +23,12 @@ This **almost minimal HTML5** document has to two faces.
 
 ## Dive deeper
 
-Get the source via `git clone  https://github.com/gesmile/html5.git`, look, play, learn, use and improve. Feedback to improve is welcome.
+Get the source via `git clone https://github.com/gesmile/html5.git`, look, play, learn, use and improve.   
+Feedback to improve the project is welcome.
 
 ## To Dos
 
-* The design with hgroup(h1/h2 + p) is outdated and needs to be rebuilt, like done in default.html Section 3
+* The design with hgroup(h1/h2 + p) is outdated and needs to be rebuilt, like done in example.html Section 3
 * Responsive menu with 'closed button' when displayed on cell phones.
 * Back-to-top menu following these style guides: https://www.nngroup.com/articles/back-to-top/
 * Define a semantic meaning of a couple inline tag elements. Then implementing these strict over all documents.
