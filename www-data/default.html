@@ -6,24 +6,51 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="I am lucky if this description will be used somehow: 'Howto enrich a web-site with data'.">
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/default.css" >
-  <title>Default HTML5</title>
-
+  <link rel="stylesheet" href="css/icon.css">
+  <link rel="stylesheet" href="css/table.css">
+  <link rel="stylesheet" href="css/default.css" data-theme-css>
+  <link rel="stylesheet" id="external-theme" disabled>
+  <script src="script/css-select.js" defer></script>
+  <script src="script/nav-button.js" defer></script>
+  <title>almost minimal HTML5: default</title>
 </head>
 
-<body>
+<body id="to-top">
+
 <header itemtype="https://schema.org/WPHeader" itemscope>
   <!-- header starts -->
 
-  <!-- Screen Menu Button -->
-    <nav id="nav-main" aria-label="main navigation">
-      <ul>
-        <li><a href="index.html" >Home</a></li>
-        <li><a href="example.html">Example</a></li>
-        <li><a href="default.html" aria-current="page">Default</a></li>
-        <li><a href="https://github.com/gesmile/html5" rel="noreferrer">github Source</a></li>
-      </ul>
-    </nav>
+<!-- Mobile Menu Button   -->
+<button id="btn-top" aria-expanded="false"  aria-controls="nav-main-top"> ☰ Menu </button>
+
+<!-- Top Screen Menu Button -->
+<nav id="nav-main-top" aria-label="main navigation" hidden>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="example.html">Example</a></li>
+    <li><a href="default.html" aria-current="page">Default</a></li>
+    <li>
+      <a href="https://github.com/gesmile/html5" rel="noreferrer">
+        GitHub Source
+      </a>
+    </li
+    >
+    <li class="nav-right">
+      <div class="theme-switcher">
+      <select class="theme-select" id="theme-select-top">
+        <option value="auto">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="solar">Solarized</option>
+        <option value="none">Without</option>
+        <option value="external:index.css">External</option>
+      </select>
+      <label for="theme-select-top">CSS</label>
+      </div>
+      <a href="#to-bottom" aria-label="Jump to bottom" id="jump-to-bottom">End ↓ </a>
+    </li>
+  </ul>
+</nav>
 
 <hgroup>
   <h1>almost minimal HTML5: default</h1>
@@ -46,8 +73,41 @@
 </section>
 </main>
 
-  
 <footer>
+  <!-- Bottom Screen Menu Button -->
+<nav id="nav-main-bottom" aria-label="main navigation" hidden>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="example.html">Example</a></li>
+    <li><a href="default.html" aria-current="page">Default</a></li>
+    <li>
+      <a href="https://github.com/gesmile/html5" rel="noreferrer">
+        GitHub Source
+      </a>
+    </li>
+    <li class="nav-right">
+      <div class="theme-switcher">
+      <select class="theme-select" id="theme-select-bottom">
+        <option value="auto">Auto</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+        <option value="solar">Solarized</option>
+        <option value="none">Without</option>
+        <option value="external:index.css">External</option>
+      </select>
+      <label for="theme-select-bottom">CSS</label>
+      </div>
+    <a href="#to-top" aria-label="Back to top" id="back-to-top">Top ↑ </a>
+    </li>
+  </ul>
+</nav>
+
+<!-- Mobile Menu Button -->
+  <button id="btn-bottom" aria-expanded="false" aria-controls="nav-main-bottom"> ☰ Menu </button>
+</footer>
+
+  
+<footer id="to-bottom">
 <!--  footer starts -->
 <article id="imprint" aria-labelledby="imprint-title">
   <h2 id="imprint-title">Imprint</h2>
