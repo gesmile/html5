@@ -10,24 +10,21 @@ Define colors, e.g:
 
 ==================================================================  */
 
+@layer defaults {
+:root {
+  --icon-main: #74a40e;
+  --icon-accent: rgba(139, 222, 24, 0.854);
+  --icon-main-hover: #AE00D9;
+  --icon-accent-hover: #f7c0f3;
+}
+
 .icon {
-
---icon-main:  #74a40e;
---icon-accent:  rgba(139, 222, 24, 0.854);
-
-/* only necessary when explicit hover is used */ 
---icon-main-hover:#AE00D9;
---icon-accent-hover: #f7c0f3;
-
-width: 1.6em;
-height: 1.6em;
-vertical-align: middle;
-
-color: var(--icon-main);
-
-fill: none;
-transition: 0.6s ease;
-
+  width: 1.6em;
+  height: 1.6em;
+  vertical-align: middle;
+  color: var(--icon-main);
+  fill: none;
+  transition: 0.6s ease;
 }
 
 /* fill|stroke icons */
@@ -56,3 +53,4 @@ transition: 0.6s ease;
 .icon:hover .icon-main   { fill: var(--icon-main-hover); }
 /* ==================================================================  */
 
+}

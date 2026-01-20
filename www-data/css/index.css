@@ -1,5 +1,5 @@
 /* ======================
-   base layout
+   base layout 
 ====================== */
 
 *,
@@ -13,11 +13,11 @@ body {
   --body-bg:  #fefefe;
 /*  --section-bg: rgb(236, 244, 245); */
   --section-bg: #fefefe; 
-  --strong-fg:   rgb(14, 65, 177);
+  --strong-fg:   rgb(37, 98, 15);
 /*  --lines: #fefefe; */
   --lines: #111; 
   --list-items:  #111;
-  --cite-code:   rgb(14, 65, 177);
+  --cite-code:   rgb(32, 135, 79);
   --headlines: rgb(5, 147, 33);
   --main-bg:  #fefefe; 
   --nav-bg: #aaF011;
@@ -169,6 +169,7 @@ article > h2 {
     position: relative;
     color:var(--headlines);
 }
+
 
 /*  Headlines  section hgroup  H2 + p (old: 2) */
 

@@ -2,339 +2,544 @@
    base layout
 ====================== */
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  --body-color: #111;
-  --body-bg:  #eef9f4;
-/*  --section-bg: rgb(236, 244, 245); */
-  --section-bg: #fefefe; 
-  --strong-fg:  rgb(14, 65, 177);
-  --lines: #77F;
-  --list-items:  rgb(28, 114, 47);
-  --cite-code:  rgb(126, 8, 8);
-  --headlines: rgb(5, 147, 33);
-  --main-bg:  rgba(252, 252, 156, 0.5);
-  --nav-bg: #aaF011;
-/*  --nav-hoover: #ed8d17; */
-  --nav-hoover: #FF00FF;
-  --footer-line: #FF00FF;
-  margin: 0;
-  font-family: system-ui, sans-serif;
-  line-height: 1.6;
-  color: var(--body-color);
-  background: var(--body-bg);
-}
-
-/* ======================
-   Header / Navigation
-====================== */
-
-header {
-  padding: 0.5rem;
-/*   border-bottom: 2px solid var(--headlines); */
-}
-
-nav ul {
-  display: flex;
-  gap: 1rem;
-  padding: 0.2rem;
-  list-style: none;
-  background: var(--nav-bg);
-  border-radius: 8px;
-}
-
-nav a {
-  text-decoration: none;
-  color: inherit;
-  margin: 0.7em;
-}
+/* first CSS line */
+@layer defaults, reset, themes, layout;
 
 
-[aria-current=page] {
-  font-weight: bold;
-  padding: 0.1rem;
-  color: var(--headlines);
-  background: var(--body-bg);
-  border-radius: 8px;
-}
-
-
-/* ======================
-   Links
-====================== */
-
-a{
-  text-decoration: none;
-  color: var(--body-color);
-}
-
-a:hover,
-a:focus {
-  color: var(--nav-hoover);
-}
-
-a[href^="http"]::before {
-  content: "\1F517";
-  margin-right: 4px;
-}
-
-
-/* ======================
-   content
-====================== */
-
-main {
-  padding: 1rem;
-/*  --main-bg:  #fefefe; */
-  background: var(--main-bg);
-}
-
-article {
-background: var(--body-bg);
-border: 2px solid var(--lines);
-padding: 1rem;
-}
-
-section {
-background:var(--section-bg); 
-
-/* do not remove */
-border-bottom: 2px dashed var(--lines);
-
-padding: 1rem;
-}
-
-section p {
-    /* background:  var(--main-bg); */
-    color: var(--body-color);
-    /* background: inherit; */
-    /* background: var(--body-bg); */
-    background: lab(97.48% -6.26 7);
-}
-
-section > strong, em, b, i, data {
-    color: var(--strong-fg);
-    background: inherit;
-}
-
-section > ul, li, dd, dl {
-    color: var(--list-items);
-    background: inherit;
-}
-
-section dt {
-    color: var(--cite-code);
-    background: inherit;
-    font-size: 1.1em;
-}
-
-section > cite, code, pre {
-    color: var(--cite-code);
-    background: inherit;
-}
-
-
-/* ======================
-   Headlines 
-====================== */
-
-/*  Headline hgroup article  H1  */
-
-header hgroup {
-  margin: 0 0 1.5rem;
-  color:var(--headlines);
-}
-
-header h1 {
-  margin: 0;
-  position: relative;
-  padding:0 0 0 55px;
-  background: url('../images/logo.png') no-repeat left center;
-  background-size: 50px;
-}
-
-header hgroup > h1::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 40%;
-  height: 0.2rem;
-  background-color: currentColor;
-  opacity: 0.35;
-  border-radius: 3px;
-}
-
-header hgroup > p {
-  margin: 0 0 0 0.5em;
-  background: inherit;
-}
-
-
-/*  Headlines article  H2  */
-
-article > h2 {
-    font-size: clamp(0.8rem, 1.5vw, 1rem);
-    margin: 0;
-    padding-bottom: 0.2rem;
-    position: relative;
-    color:var(--headlines);
-}
-
-/*  Headlines  section hgroup  H2 + p  (old: 2) */
-
-section hgroup {
-  margin: 0 0 1.5rem;
-}
-
-section hgroup > h2 {
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--headlines);
-  margin: 0;
-  padding-bottom: 0.2rem;
-  position: relative;
-}
-
-section hgroup > h2::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 30%;
-  height: 0.2rem;
-  background-color: currentColor;
-  opacity: 0.35;
-  border-radius: 3px;
-}
-
-section hgroup > p {
-  margin: 0 0 0 0.5em;
-  background: var(--section-bg);
-  color: var(--list-items);
-}
-
-
-/* Header h2 Headline new, without hgroup  (new: 1) */
-
-h2.sectionheader  {
-    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
-    font-weight: 500;
-    line-height: 1.2;
-    padding-bottom: 0.2rem;
-    color:var(--headlines);
-    margin: 0;
-    position: relative;
-}
-
-h2.sectionheader::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 30%;
-  height: 0.2rem;
-  background-color: currentColor;
-  opacity: 0.35;
-  border-radius: 3px;
-}
-
-p.sectionheader  {
-  margin: 0 0 0 0.5em;
-  background: var(--section-bg);
-  color: var(--list-items);
-}
-
-p.sectionheader > em  {
-  color: var(--list-items);
-}
-
-/*  Headlines section hgroup H3 - H6  */
-
-section h3, h4, h5, h6 {
-  color: var(--headlines);
-}
-
-/* ======================
-   Form
-====================== */
-
-form[role="search"] {
-  display: flex;
-  gap: 0.5rem;
-  align-items: center;
-}
-
-/* ======================
-   Images in figuser/figcaption always left
-   floating Text, magazine design
-====================== */
-figure {
-  margin: 0 1em 1em 0;
-  width: 100%;;
-}
-
-figure.float {
-  float: left;
-  width: auto;
-}
-
-figure img,
-figure table {
-  display: block;
-  max-width: 100%;
-}
-
-figcaption {
-  font-size: 0.9em;
-  opacity: 0.8;
-}
-
-section img {
-  border: solid;
-  color: var(--headlines);
-}
-
-/* ======================
-   Footer
-====================== */
-
-footer {
-  padding: 2rem;
-  border-top: 2px solid var(--footer-line);
-  color: var(--body-color);
-  background: var(--body-bg);
-}
-
-/* ======================
-   event ticker
-====================== */
-
-.event {
-  border-bottom: 1px dotted var(--lines);
-}
-
-.event-title {
-  color: var(--headlines);
-}
-
-.event-info {
-  color: var(--list-items:);
-}
-
-/* ======================
-   Responsive
-====================== */
-
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
+/* box sizing change: width = absolute, padding & border are inside "width", content shrinks dynamically */
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
   }
+}
+
+
+/* ======================
+   themes color
+====================== */
+
+@layer themes { 
+
+  /* Paletten */
+  :root {
+
+    --light-body-color: #111;
+    --light-body-bg:  #fefefe;
+    --light-section-bg: #fefefe; 
+    --light-strong-fg:   rgb(39, 142, 55);
+    --light-lines: #111; 
+    --light-list-items:  #111;
+    --light-cite-code:   rgb(60, 199, 136);
+    --light-headlines: rgb(5, 147, 33);
+    --light-main-bg:  #fefefe; 
+    --light-nav-bg: #aaF011;
+    --light-nav-hoover: #AE00D9;
+    --light-icon-main: #7da81a;
+    --light-icon-accent: #88cc44;
+    --light-icon-main-hover: #AE00D9;
+    --light-icon-accent-hover: #f7c0f3;
+
+    --dark-body-color: #fefefe;
+    --dark-body-bg:  #111;
+    --dark-section-bg: #111;
+    --dark-strong-fg:   rgb(106, 243, 21);
+    --dark-lines: #fefefe; 
+    --dark-list-items:  #fefefe;
+    --dark-cite-code:   rgb(58, 215, 126);
+    --dark-headlines: rgb(26, 247, 70);
+    --dark-main-bg:  #111; 
+    --dark-nav-bg: #aaF011;
+    --dark-nav-hoover: #AE00D9;
+    --dark-icon-main: #e8ea59;
+    --dark-icon-accent: #c2ee22;
+    --dark-icon-main-hover: #d7afe1;
+    --dark-icon-accent-hover: #1fb0ba;
+
+    --solar-body-color: #e98a3c;
+    --solar-body-bg:  #faf8c6;
+    --solar-section-bg: #efebc28c; 
+    --solar-strong-fg:   rgb(134, 56, 69);
+    --solar-lines: #4e0606; 
+    --solar-list-items:  #a50b0b;
+    --solar-cite-code:   rgb(133, 28, 42);
+    --solar-headlines: rgba(165, 26, 26, 0.756);
+    --solar-main-bg:  #fefefe; 
+    --solar-nav-bg: #e2d631;
+    --solar-nav-hoover: #e66419;
+    --solar-icon-main: #e66e32;
+    --solar-icon-accent: #e5c94d;
+    --solar-icon-main-hover: #29a414;
+    --solar-icon-accent-hover: #6edb25;
+  }
+
+
+  /* Default = Light */
+
+  :root {
+    --body-color:         var(--light-body-color);
+    --body-bg:            var(--light-body-bg);
+    --section-bg:         var(--light-section-bg);
+    --strong-fg:          var(--light-strong-fg);
+    --lines:              var(--light-lines);
+    --list-items:         var(--light-list-items);
+    --cite-code:          var(--light-cite-code);
+    --headlines:          var(--light-headlines);
+    --main-bg:            var(--light-main-bg);
+    --nav-bg:             var(--light-nav-bg);
+    --nav-hoover:         var(--light-nav-hoover);
+    --icon-main:          var(--light-icon-main);
+    --icon-accent:        var(--light-icon-accent);
+    --icon-main-hover:    var(--light-icon-main-hover);
+    --icon-accent-hover:  var(--light-icon-accent-hover);
+  }
+
+
+  /* Auto for Dark */
+  @media (prefers-color-scheme: dark) {
+    :root {
+    --body-color:         var(--dark-body-color);
+    --body-bg:            var(--dark-body-bg);
+    --section-bg:         var(--dark-section-bg);
+    --strong-fg:          var(--dark-strong-fg);
+    --lines:              var(--dark-lines);
+    --list-items:         var(--dark-list-items);
+    --cite-code:          var(--dark-cite-code);
+    --headlines:          var(--dark-headlines);
+    --main-bg:            var(--dark-main-bg);
+    --nav-bg:             var(--dark-nav-bg);
+    --nav-hoover:         var(--dark-nav-hoover);
+    --icon-main:          var(--dark-icon-main);
+    --icon-accent:        var(--dark-icon-accent);
+    --icon-main-hover:    var(--dark-icon-main-hover);
+    --icon-accent-hover:  var(--dark-icon-accent-hover);
+    }
+   }
+
+
+   /* Manuelle Overrides = Switch */
+   html[data-theme="light"] {
+     --body-color:         var(--light-body-color);
+     --body-bg:            var(--light-body-bg);
+     --section-bg:         var(--light-section-bg);
+     --strong-fg:          var(--light-strong-fg);
+     --lines:              var(--light-lines);
+     --list-items:         var(--light-list-items);
+     --cite-code:          var(--light-cite-code);
+     --headlines:          var(--light-headlines);
+     --main-bg:            var(--light-main-bg);
+     --nav-bg:             var(--light-nav-bg);
+     --nav-hoover:         var(--light-nav-hoover);
+     --icon-main:          var(--light-icon-main);
+     --icon-accent:        var(--light-icon-accent);
+     --icon-main-hover:    var(--light-icon-main-hover);
+     --icon-accent-hover:  var(--light-icon-accent-hover);
+   }
+
+   html[data-theme="dark"] {
+     --body-color:         var(--dark-body-color);
+     --body-bg:            var(--dark-body-bg);
+     --section-bg:         var(--dark-section-bg);
+     --strong-fg:          var(--dark-strong-fg);
+     --lines:              var(--dark-lines);
+     --list-items:         var(--dark-list-items);
+     --cite-code:          var(--dark-cite-code);
+     --headlines:          var(--dark-headlines);
+     --main-bg:            var(--dark-main-bg);
+     --nav-bg:             var(--dark-nav-bg);
+     --nav-hoover:         var(--dark-nav-hoover);
+     --icon-main:          var(--dark-icon-main);
+     --icon-accent:        var(--dark-icon-accent);
+     --icon-main-hover:    var(--dark-icon-main-hover);
+     --icon-accent-hover:  var(--dark-icon-accent-hover);
+   }
+
+   html[data-theme="solar"] {
+     --body-color:         var(--solar-body-color);
+     --body-bg:            var(--solar-body-bg);
+     --section-bg:         var(--solar-section-bg);
+     --strong-fg:          var(--solar-strong-fg);
+     --lines:              var(--solar-lines);
+     --list-items:         var(--solar-list-items);
+     --cite-code:          var(--solar-cite-code);
+     --headlines:          var(--solar-headlines);
+     --main-bg:            var(--solar-main-bg);
+     --nav-bg:             var(--solar-nav-bg);
+     --nav-hoover:         var(--solar-nav-hoover);
+     --icon-main:          var(--solar-icon-main);
+     --icon-accent:        var(--solar-icon-accent);
+     --icon-main-hover:    var(--solar-icon-main-hover);
+     --icon-accent-hover:  var(--solar-icon-accent-hover);
+   }
+
+} 
+
+@layer layout {
+
+  body {
+     margin: 0;
+     font-family: system-ui, sans-serif;
+     line-height: 1.6;
+     color: var(--body-color);
+     background: var(--body-bg);
+  } 
+
+
+  body,
+  main,
+  section,
+  article,
+  nav {
+    transition: background-color 0.55s ease, color 0.55s ease, border-color 0.55s ease;
+  }
+
+  header,
+  footer {
+     padding: 0.5rem;
+  } 
+
+  /* ======================
+       Navigation
+  ====================== */
+
+  nav {
+    display: block;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+    list-style: none;
+    padding: 0.1rem;
+    align-items: stretch;
+    border-radius: 8px;
+    background: var(--nav-bg);
+  } 
+
+  nav li {
+   display: flex;
+   align-items: center;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.3rem 0.5rem;
+    margin: 0;
+  } 
+
+  .nav-right {
+    margin-left: auto;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  [aria-current=page] {
+     font-weight: bold;
+     padding: 0.1rem;
+     color: var(--headlines);
+     background: var(--body-bg);
+     border-radius: 8px;
+  } 
+
+  .theme-switcher {
+     display: flex;
+     align-items: center;
+     gap: 0.4rem;
+  } 
+
+  #theme-switcher {
+     text-align: right;
+    } 
+
+
+
+    /* ======================
+        Links
+     ====================== */
+
+    a{
+       text-decoration: none;
+       color: var(--body-color);
+    } 
+
+    a:hover,
+    a:focus {
+       color: var(--nav-hoover);
+    } 
+
+    a[href^="http"]::before {
+       content: "\1F517";
+       margin-right: 4px;
+    } 
+
+    /* ======================
+        content
+    ====================== */
+
+    main {
+    /*  --main-bg:  #fefefe; */
+       background: var(--main-bg);
+    } 
+
+    article {
+    background: var(--body-bg);
+    padding: 1rem;
+    } 
+
+    section {
+    background:var(--section-bg); 
+    padding: 1rem;
+    } 
+
+    section p {
+         color: var(--body-color);
+         background: inherit;
+    } 
+
+    section > strong, 
+    section em, 
+    section b, 
+    section i, 
+    section data {
+         color: var(--strong-fg);
+         background: inherit;
+    } 
+
+    section > ul, 
+    section li, 
+    section dd, 
+    section dl {
+         color: var(--list-items);
+         background: inherit;
+    } 
+
+     section dt {
+         color: var(--headlines);
+         background: inherit;
+         font-size: 1.1em;
+     }
+
+    section > cite, 
+    section code, 
+    section pre {
+         color: var(--cite-code);
+         background: inherit;
+    }
+
+    /* ======================
+        Headlines 
+    ====================== */
+
+     /*  Headline hgroup article  H1  */
+
+    header hgroup {
+       margin: 0 0 1.5rem;
+       color:var(--headlines);
+     }
+
+    header h1 {
+       margin: 0;
+       position: relative;
+       padding:0 0 0 55px;
+       background: url('../images/logo.png') no-repeat left center;
+       background-size: 50px;
+     }
+
+    header hgroup > h1::after {
+       content: "";
+       position: absolute;
+       left: 0;
+       bottom: 0;
+       width: 40%;
+       height: 0.2rem;
+       background-color: currentColor;
+       opacity: 0.35;
+       border-radius: 3px;
+     }
+
+    header hgroup > p {
+       margin: 0 0 0 0.5em;
+       background: inherit;
+     }
+
+     /*  Headlines article  H2  */
+
+     article > h2 {
+         font-size: clamp(0.8rem, 1.5vw, 1rem);
+         margin: 0;
+         padding-bottom: 0.2rem;
+         position: relative;
+         color:var(--headlines);
+     }
+
+    /* Header h2 Headline new, without hgroup  (new: 1) */
+
+    h2.sectionheader  {
+        font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+        font-weight: 500;
+        line-height: 1.2;
+        padding-bottom: 0.2rem;
+        color:var(--headlines);
+        margin: 0;
+        position: relative;
+    }
+
+    h2.sectionheader::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 30%;
+      height: 0.2rem;
+      background-color: currentColor;
+      opacity: 0.35;
+      border-radius: 3px;
+    }
+
+    p.sectionheader  {
+      margin: 0 0 0 0.5em;
+      background: var(--section-bg);
+      color: var(--list-items);
+    }
+
+    p.sectionheader > em  {
+      color: var(--list-items);
+    }
+
+     /*  Headlines  section hgroup  H2 + p (old: 2) */
+
+     section hgroup {
+       margin: 0 0 1.5rem;
+     }
+
+     section hgroup > h2 {
+       font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+       font-weight: 500;
+       line-height: 1.2;
+       color: var(--headlines);
+       margin: 0;
+       padding-bottom: 0.2rem;
+       position: relative;
+     }
+
+     section hgroup > h2::after {
+       content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 10%;
+      height: 0.2rem;
+      background-color: currentColor;
+      opacity: 0.35;
+      border-radius: 3px;
+    }
+
+    section hgroup > p {
+      margin: 0 0 0 0.5em;
+      background: var(--section-bg);
+      color: var(--list-items);
+    }
+
+    /*  Headlines section hgroup H3 - H6  */
+
+    section h3, 
+    section h4, 
+    section h5, 
+    section h6 {
+      color: var(--headlines);
+    }
+
+    /* ======================
+       Form
+    ====================== */
+
+    form[role="search"] {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    /* ======================
+       Images in figuser/figcaption always left
+       floating Text, magazine design
+    ====================== */
+    figure {
+      margin: 0 1em 1em 0;
+      width: 100%;;
+    }
+
+    figure.float {
+      float: left;
+      width: auto;  
+    }
+
+    figure img,
+    figure table {
+      display: block;
+      max-width: 100%;
+    }
+
+    figcaption {
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+
+    section img {
+      border: solid;
+      color: var(--headlines);
+    }
+
+    /* ======================
+       Footer
+    ====================== */
+
+    footer {
+      border-top: 1px solid var(--lines);
+      color: var(--body-color);
+      background: var(--body-bg);
+    }
+
+
+  /* ======================
+     Responsive
+  ====================== */
+
+  /* Mobile: Button sichtbar */
+  #nav-mobile-button {
+  display: block;
+}
+
+  /* Desktop: Button aus, Menü immer sichtbar */
+  @media (min-width: 768px) {
+    #btn-top,
+    #btn-bottom  {
+      display: none;
+    }
+
+    #nav-main-top,
+    #nav-main-bottom {
+      display: block !important;
+    }
+    nav ul {
+      flex-direction: row;
+      align-items: center;    /* Vertikal schön ausgerichtet */
+    }
+  }
+
+  @media (max-width: 767px) {
+    nav ul {
+      flex-direction: column;
+    }
+    #nav-main-top[hidden],
+    #nav-main-bottom[hidden] {
+    display: none;
+    }
+
+  }
+
 }
 
