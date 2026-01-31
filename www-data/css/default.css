@@ -22,7 +22,6 @@
 
 @layer themes { 
 
-  /* Paletten */
   :root {
 
     --light-body-color: #111;
@@ -35,6 +34,7 @@
     --light-headlines: rgb(5, 147, 33);
     --light-main-bg:  #fefefe; 
     --light-nav-bg: #aaF011;
+    --light-nav-text: #0e2d8b;
     --light-nav-hoover: #AE00D9;
     --light-icon-main: #7da81a;
     --light-icon-accent: #88cc44;
@@ -51,6 +51,7 @@
     --dark-headlines: rgb(26, 247, 70);
     --dark-main-bg:  #111; 
     --dark-nav-bg: #aaF011;
+    --dark-nav-text: #68090b;
     --dark-nav-hoover: #AE00D9;
     --dark-icon-main: #e8ea59;
     --dark-icon-accent: #c2ee22;
@@ -67,6 +68,7 @@
     --solar-headlines: rgba(165, 26, 26, 0.756);
     --solar-main-bg:  #fefefe; 
     --solar-nav-bg: #e2d631;
+    --solar-nav-text: #68090b;
     --solar-nav-hoover: #e66419;
     --solar-icon-main: #e66e32;
     --solar-icon-accent: #e5c94d;
@@ -88,6 +90,7 @@
     --headlines:          var(--light-headlines);
     --main-bg:            var(--light-main-bg);
     --nav-bg:             var(--light-nav-bg);
+    --nav-text:           var(--light-nav-text);
     --nav-hoover:         var(--light-nav-hoover);
     --icon-main:          var(--light-icon-main);
     --icon-accent:        var(--light-icon-accent);
@@ -95,8 +98,8 @@
     --icon-accent-hover:  var(--light-icon-accent-hover);
   }
 
-
   /* Auto for Dark */
+
   @media (prefers-color-scheme: dark) {
     :root {
     --body-color:         var(--dark-body-color);
@@ -109,6 +112,7 @@
     --headlines:          var(--dark-headlines);
     --main-bg:            var(--dark-main-bg);
     --nav-bg:             var(--dark-nav-bg);
+    --nav-text:           var(--dark-nav-text);
     --nav-hoover:         var(--dark-nav-hoover);
     --icon-main:          var(--dark-icon-main);
     --icon-accent:        var(--dark-icon-accent);
@@ -119,6 +123,7 @@
 
 
    /* Manuelle Overrides = Switch */
+
    html[data-theme="light"] {
      --body-color:         var(--light-body-color);
      --body-bg:            var(--light-body-bg);
@@ -130,6 +135,7 @@
      --headlines:          var(--light-headlines);
      --main-bg:            var(--light-main-bg);
      --nav-bg:             var(--light-nav-bg);
+     --nav-text:           var(--light-nav-text);
      --nav-hoover:         var(--light-nav-hoover);
      --icon-main:          var(--light-icon-main);
      --icon-accent:        var(--light-icon-accent);
@@ -148,6 +154,7 @@
      --headlines:          var(--dark-headlines);
      --main-bg:            var(--dark-main-bg);
      --nav-bg:             var(--dark-nav-bg);
+     --nav-text:           var(--dark-nav-text);
      --nav-hoover:         var(--dark-nav-hoover);
      --icon-main:          var(--dark-icon-main);
      --icon-accent:        var(--dark-icon-accent);
@@ -166,13 +173,13 @@
      --headlines:          var(--solar-headlines);
      --main-bg:            var(--solar-main-bg);
      --nav-bg:             var(--solar-nav-bg);
+     --nav-text:           var(--solar-nav-text);
      --nav-hoover:         var(--solar-nav-hoover);
      --icon-main:          var(--solar-icon-main);
      --icon-accent:        var(--solar-icon-accent);
      --icon-main-hover:    var(--solar-icon-main-hover);
      --icon-accent-hover:  var(--solar-icon-accent-hover);
    }
-
 } 
 
 @layer layout {
@@ -196,7 +203,7 @@
 
   header,
   footer {
-     padding: 0.5rem;
+     padding: 1.5rem;
   } 
 
   /* ======================
@@ -225,7 +232,8 @@
 
   nav a {
     text-decoration: none;
-    color: inherit;
+    color: var(--nav-text);
+    /* color: inherit; */
     padding: 0.3rem 0.5rem;
     margin: 0;
   } 
