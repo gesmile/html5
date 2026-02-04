@@ -1,24 +1,24 @@
 # almost minimal HTML5
 
-This is a private learning repository for a simple static HTML5 page.   
+This is a learning repository for a simple static HTML5 page.   
 It's meant as an easy accessible semantic web document for learning and experimenting purpose.
 
 This **almost minimal HTML5** document has two faces.
 
 * One visual, browser-based human readable content, starting with the `index.html` file or at [tmp.gedankenfalle.de/html5/](https://tmp.gedankenfalle.de/html5/)
-* One parser-based, which lets machines read through the _eyes_ of different libraries 'data' from inside the document.
+* One parser-based, which lets machines read through the _eyes_ of different libraries 'data' from inside the document, e.g. the project [altbrow](https://github.com/gesmile/altbrow)
 
 ## Learning Aims
 
-* modern HTML5, CSS and JavaScript Design (not yet)
-* playing with SVG, canvas and other graphical techniques (not yet)
+* modern HTML5, CSS and JavaScript Design (used, but not yet described)
+* playing with SVG, canvas and other graphical techniques (just SVG a little bit, but not yet described)
 * exploring microdata and semantic advantages
-* receiving and serving feeds (not yet)
-* multimedia and game experience (not yet)
+* receiving and serving feeds (not yet thought about)
+* multimedia and game experience (not yet thought about)
 
 ## Deeper Aims
 
-* provide a default web-page for self-published information
+* provide a [default](https://gedankenfalle.de/html5/default.html "default") web-page for 'copy-paste' self-published information
 * understanding the techniques to use them wisely
 
 ## Dive deeper
@@ -67,7 +67,6 @@ Thing
 │     ├── character → Person
 │     └── subjectOf → WebPage
 └── WebPage
-      └── mainEntity → Thing
 
 ```
 
