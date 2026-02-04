@@ -13,7 +13,7 @@ Define colors, e.g:
 @layer defaults {
 :root {
   --icon-main: #74a40e;
-  --icon-accent: rgba(139, 222, 24, 0.854);
+  --icon-accent: rgba(139, 222, 24, 0.854); 
   --icon-main-hover: #AE00D9;
   --icon-accent-hover: #f7c0f3;
 }
@@ -35,6 +35,18 @@ Define colors, e.g:
 .icon-fill .icon-main   { fill: var(--icon-main); }
 .icon-fill .icon-accent { fill: var(--icon-accent); }
 
+.icon-stroke .icon-main { stroke: var(--icon-main);}
+.icon-stroke .icon-accent { stroke: var(--icon-accent); }
+
+/* ==================================================================  */
+/* secure wrong fill for stroke Icons                                  */
+/* ==================================================================  */
+
+.icon-stroke path,
+.icon-stroke rect,
+.icon-stroke line {
+  fill: none !important;
+}
 
 /* ==================================================================  */
 /* hover switch: brighter / explicit hoover color                      */
@@ -49,8 +61,15 @@ Define colors, e.g:
 
 /* explicit hoover color  */
 .icon:hover { color: var(--icon-main-hover); }
-.icon:hover .icon-accent { fill: var(--icon-accent-hover); }
-.icon:hover .icon-main   { fill: var(--icon-main-hover); }
+
+/* Fill-Icons */
+.icon-fill:hover .icon-main { fill: var(--icon-main-hover); }
+.icon-fill:hover .icon-accent { fill: var(--icon-accent-hover); }
+
+/* Stroke-Icons */
+.icon-stroke:hover .icon-main { stroke: var(--icon-main-hover); }
+.icon-stroke:hover .icon-accent { stroke: var(--icon-accent-hover); }
+
 /* ==================================================================  */
 
 }
