@@ -9,8 +9,6 @@
   <link rel="stylesheet" href="css/icon.css">
   <link rel="stylesheet" href="css/table.css">
   <link rel="stylesheet" href="css/default.css" data-theme-css>
-  <link rel="stylesheet" id="external-theme" disabled>
-  <script src="script/css-select.js" defer></script>
   <script src="script/nav-button.js" defer></script>
   <title>almost minimal HTML5: default</title>
 </head>
@@ -33,20 +31,8 @@
       <a href="https://github.com/gesmile/html5" rel="noreferrer">
         GitHub Source
       </a>
-    </li
-    >
+    </li>
     <li class="nav-right">
-      <div class="theme-switcher">
-      <select class="theme-select" id="theme-select-top">
-        <option value="auto">Auto</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="solar">Solarized</option>
-        <option value="none">Without</option>
-        <option value="external:index.css">External</option>
-      </select>
-      <label for="theme-select-top">CSS</label>
-      </div>
       <a href="#to-bottom" aria-label="Jump to bottom" id="jump-to-bottom">End ↓ </a>
     </li>
   </ul>
@@ -68,7 +54,89 @@
     <p class="sectionheader"><em>Outline this new content Headline</em></p>
   </header>
 
-<p>No content is better than poor content, isn't it?</p>
+<p><strong>No content</strong> is better than <em>poor content</em>, isn't it?</p>
+</section>
+
+
+<section id="section_2" >
+  <header>
+    <h2 class="sectionheader">Look and ...</h2>
+    <p class="sectionheader">... spot the differences.</p>
+  </header>
+
+<div class="visual-row">
+  <div class="canvas-wrapper"><figure>
+  <canvas id="canvas-default" width="450" height="450"></canvas>
+  <figcaption><strong>canvas</strong> id="canvas-default"</figcaption>
+    <script>
+    const canvas = document.getElementById("canvas-default");
+    const ctx = canvas.getContext("2d");
+
+    // CSS vars read once – assumes theme is fixed on page load
+    const css = getComputedStyle(document.documentElement);
+    const color = {
+      main: css.getPropertyValue('--icon-main').trim(),
+      accent: css.getPropertyValue('--icon-accent').trim(),
+      mainHover: css.getPropertyValue('--icon-main-hover').trim(),
+      accentHover: css.getPropertyValue('--icon-accent-hover').trim()
+    };
+
+    // Rahmen-Geometrie
+    const frames = [
+      { x: 2.5, y: 2.5, w: 445, h: 445, lw: 3, base: color.main,   hover: color.mainHover },
+      { x: 7.5, y: 7.5, w: 436, h: 436, lw: 2, base: color.accent, hover: color.accentHover }
+    ];
+
+    function draw(hover = false) {
+      ctx.clearRect(0, 0, 450, 450);
+      frames.forEach(f => {
+        ctx.lineWidth = f.lw;
+        ctx.strokeStyle = hover ? f.hover : f.base;
+        ctx.strokeRect(f.x, f.y, f.w, f.h);
+      });
+    }
+
+    function hit(mx, my, r) {
+      const h = r.lw / 2;
+      return (
+        (Math.abs(mx - r.x) <= h && my >= r.y && my <= r.y + r.h) ||
+        (Math.abs(mx - (r.x + r.w)) <= h && my >= r.y && my <= r.y + r.h) ||
+        (Math.abs(my - r.y) <= h && mx >= r.x && mx <= r.x + r.w) ||
+        (Math.abs(my - (r.y + r.h)) <= h && mx >= r.x && mx <= r.x + r.w)
+      );
+    }
+
+    draw();
+
+    canvas.addEventListener("mousemove", e => {
+      const r = canvas.getBoundingClientRect();
+      const mx = e.clientX - r.left;
+      const my = e.clientY - r.top;
+
+      draw(frames.some(f => hit(mx, my, f)));
+    });
+
+    canvas.addEventListener("mouseleave", () => draw());
+    </script>
+  </figure>
+  </div>
+
+  <div class="svg-wrapper">
+    <figure>
+    <svg
+      class="icon icon-stroke"
+      viewBox="0 0 450 450"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <!-- outside 3px stroke main color -->
+      <rect class="icon-main" x="2.5" y="2.5" width="445" height="445" fill="none" stroke="currentColor" stroke-width="3" />
+      <!-- inside 2px stroke accent color -->
+      <rect  class="icon-accent" x="7" y="7" width="436" height="436" fill="none" stroke="currentColor" stroke-width="2"  />
+    </svg>
+    <figcaption><strong>SVG</strong> class="icon icon-stroke"</figcaption>
+    </figure>
+  </div>
+</div>
 
 </section>
 </main>
@@ -86,17 +154,6 @@
       </a>
     </li>
     <li class="nav-right">
-      <div class="theme-switcher">
-      <select class="theme-select" id="theme-select-bottom">
-        <option value="auto">Auto</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
-        <option value="solar">Solarized</option>
-        <option value="none">Without</option>
-        <option value="external:index.css">External</option>
-      </select>
-      <label for="theme-select-bottom">CSS</label>
-      </div>
     <a href="#to-top" aria-label="Back to top" id="back-to-top">Top ↑ </a>
     </li>
   </ul>
@@ -119,7 +176,7 @@
       <a href="tel:+49XXXXXXXXXXX" itemprop="telephone">Telefon:&nbsp;+49&nbsp;XXX&nbsp;XXXXXXXX</a><br>
       <a href="mailto:info@example.com" itemprop="email">E-Mail:&nbsp;info@example.com</a><br>
     </address>
-  <p>© January <time datetime="2026-01-01T00:00:00+00:00">2026</time> by Max Mustermann</p>
+  <p>January <time datetime="2026-01-01T00:00:00+00:00">2026</time></p>
 </article>
 <!-- footer ends -->
 </footer>
